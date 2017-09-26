@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ice-forms'
+  name: '@addepar/ice-forms'
 };
