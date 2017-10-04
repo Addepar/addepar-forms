@@ -1,0 +1,75 @@
+// Input styles
+.#{$ice-prefix}-input {
+  @extend %input;
+}
+
+// //== Style for input-group: input with label, with button or dropdown...
+// .#{$ice-prefix}-input-group {
+//   @include input-group(~"#{$ice-prefix}-input");
+//   &-wrapper {
+//     display: inline-block;
+//     width: 100%;
+//     vertical-align: top; // https://github.com/ant-design/ant-design/issues/6403
+//   }
+// }
+
+// // Input with affix: prefix or suffix
+// .#{$ice-prefix}-input-affix-wrapper {
+//   @include input-affix-wrapper(~"#{$ice-prefix}-input");
+
+//   // https://github.com/ant-design/ant-design/issues/6144
+//   .#{$ice-prefix}-input {
+//     min-height: 100%;  // use min-height, assume that no smaller height to override
+//   }
+// }
+
+
+
+// Basic style for input
+%input {
+  // @include placeholder(); // Reset placeholder
+  
+  position: relative;
+  display: inline-block;
+  padding: $input-padding-vertical-base $input-padding-horizontal;
+  width: 100%;
+  height: $input-height-base;
+  cursor: text;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  letter-spacing: $input-letter-spacing;
+  color: $input-color;
+  background-color: $input-bg;
+  background-image: none;
+  border: $border-width-base $border-style-base $input-border-color;
+  border-radius: $border-radius-base;
+  transition: all .3s;
+
+  &:hover {
+    @include hover();
+  }
+
+  &:focus {
+    @include active();
+  }
+
+  &-disabled {
+    @include disabled();
+  }
+
+  // Reset height for `textarea`s
+  // textarea& {
+  //   max-width: 100%; // prevent textearea resize from coming out of its container
+  //   height: auto;
+  //   vertical-align: bottom;
+  // }
+
+  // Size
+  // &-lg {
+  //   @include input-lg();
+  // }
+
+  // &-sm {
+  //   @include input-sm();
+  // }
+}
