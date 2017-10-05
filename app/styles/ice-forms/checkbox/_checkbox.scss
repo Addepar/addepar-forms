@@ -1,0 +1,111 @@
+$checkbox-prefix-cls: #{$ice-prefix}-checkbox;
+
+.#{$checkbox-prefix-cls} {
+  $checkbox-inner-prefix-cls: #{$checkbox-prefix-cls}-mark;
+
+  display: inline-block;
+  position: relative;
+
+  line-height: $checkbox-line-height;
+
+  input[type="checkbox"] {
+    height: $checkbox-input-type-height;
+    width: $checkbox-input-type-width;
+
+    margin-top: $checkbox-input-margin-top;
+    margin-right: $checkbox-input-margin-right;
+    margin-bottom: $checkbox-input-margin-bottom;
+    margin-left: $checkbox-input-margin-left;
+
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    opacity: 0.001;
+    z-index: 1;
+    vertical-align: top;
+    outline: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .#{$checkbox-inner-prefix-cls} {
+    // could become a placeholder for checkbox and radio
+    height: $checkbox-mark-height;
+    width: $checkbox-mark-width;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: $checkbox-border-radius;
+    border: $checkbox-border;
+
+    border-color: $checkbox-unchecked-border-color;
+    background-color: $checkbox-unchecked-bg;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+  }
+
+  input[type="checkbox"] {
+    &:checked {
+      + .#{$checkbox-inner-prefix-cls} {
+        border-color: $checkbox-checked-border-color;
+        background-color: $checkbox-checked-bg;
+
+        &::before {
+          top: 0;
+          left: 0;
+          height: $checkbox-mark-height / 3;
+          width: $checkbox-mark-width - 3px;
+
+          transform: rotate(-45deg);
+
+          border-bottom: solid 2px;
+          border-left: solid 2px;
+          border-color: $checkbox-checked-color;
+        }
+      }
+    }
+
+    &:indeterminate {
+      + .#{$checkbox-inner-prefix-cls} {
+        border-color: $checkbox-indeterminate-border-color;
+        background-color: $checkbox-indeterminate-bg;
+
+        &::before {
+          $height: 2px;
+          $width: 12px;
+          top: ($checkbox-mark-height - $height) / 2;
+          left: ($checkbox-mark-width - $width) / 2;
+          width: $width;
+          height: $height;
+
+          background-color: $checkbox-indeterminate-color;
+        }
+      }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      + .#{$checkbox-inner-prefix-cls} {
+        border-color: $checkbox-disabled-border-color;
+        background-color: $checkbox-disabled-bg;
+
+        &::before {
+          border-color: $checkbox-disabled-color;
+        }
+      }
+    }
+
+    &:focus {
+      + .#{$checkbox-inner-prefix-cls} {
+        border-color: $checkbox-focus-border-color;
+      }
+    }
+  }
+}

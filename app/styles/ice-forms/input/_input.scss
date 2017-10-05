@@ -41,6 +41,7 @@
   color: $input-color;
   background-color: $input-bg;
   border: $border-width-base $border-style-base $input-border-color;
+  border-radius: $input-border-radius;
   transition: all .15s;
 
   &:hover {

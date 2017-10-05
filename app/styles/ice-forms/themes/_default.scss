@@ -27,12 +27,12 @@ $font-size-lg                : $font-size-base + 2px;
 $line-height-base            : 1.5;
 $letter-spacing              : 1px;
 $border-radius-lg            : 8px;
-$border-radius-base          : 4px;
+$border-radius-base          : 0;
 $border-radius-sm            : 2px;
 
 
 // Border color
-$border-color-base           : #ddd;        // base border outline a component
+$border-color-base           : #c7c7c7;        // base border outline a component
 $border-color-split          : #e9e9e9;        // split border inside a component
 $border-width-base           : 1px;            // width of the border for a component
 $border-style-base           : solid;          // style of a components border
@@ -78,6 +78,8 @@ $input-padding-horizontal    : 10px;
 $input-padding-vertical-base : 6px;
 $input-padding-vertical-sm   : 1px;
 $input-padding-vertical-lg   : 10px;
+// $input-border                :
+$input-border-radius         : $border-radius-base;
 $input-placeholder-color     : $disabled-color;
 $input-color                 : $text-color;
 $input-border-color          : $border-color-base;
@@ -86,3 +88,35 @@ $input-addon-bg              : #eee;
 $input-hover-border-color    : $border-color-base;
 $input-disabled-bg           : $disabled-bg;
 $input-letter-spacing        : $letter-spacing;
+
+// Checkbox
+// ---
+$checkbox-line-height        : 14px;
+$checkbox-input-type-height  : 14px;
+$checkbox-input-type-width   : 14px;
+$checkbox-border             : $border-style-base $border-width-base;
+$checkbox-border-radius      : $border-radius-base;
+$checkbox-input-margin-top   : 0;
+$checkbox-input-margin-right : -1rem;
+$checkbox-input-margin-bottom: -1rem;
+$checkbox-input-margin-left  : 0;
+$checkbox-mark-height        : $checkbox-input-type-height;
+$checkbox-mark-width         : $checkbox-input-type-width;
+// Unchecked
+$checkbox-unchecked-color    : $primary-color;
+$checkbox-unchecked-border-color: $border-color-base;
+$checkbox-unchecked-bg       : $component-background;
+//Checked
+$checkbox-checked-color      : $highlight-color;
+$checkbox-checked-border-color: $border-color-base;
+$checkbox-checked-bg         : $component-background;
+//Indeterminate
+$checkbox-indeterminate-color: $highlight-color;
+$checkbox-indeterminate-border-color: $disabled-color;
+$checkbox-indeterminate-bg   : $component-background;
+//Disabled
+$checkbox-disabled-color     : $disabled-color;
+$checkbox-disabled-border-color: $border-color-base;
+$checkbox-disabled-bg        : $disabled-bg;
+//Focus
+$checkbox-focus-border-color : $highlight-color;
