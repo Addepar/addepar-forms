@@ -120,3 +120,31 @@ $checkbox-disabled-border-color: $border-color-base;
 $checkbox-disabled-bg        : $disabled-bg;
 //Focus
 $checkbox-focus-border-color : $highlight-color;
+
+// Radio
+// ---
+$radio-line-height           : 14px;
+$radio-input-type-height     : 14px;
+$radio-input-type-width      : 14px;
+$radio-border                : $border-style-base $border-width-base;
+$radio-border-radius         : 50%;
+$radio-input-margin-top      : 0;
+$radio-input-margin-right    : -1rem;
+$radio-input-margin-bottom   : -1rem;
+$radio-input-margin-left     : 0;
+$radio-mark-height           : $radio-input-type-height;
+$radio-mark-width            : $radio-input-type-width;
+//Unchecked
+$radio-unchecked-color       : $primary-color;
+$radio-unchecked-border-color: $border-color-base;
+$radio-unchecked-bg          : $component-background;
+//Checked
+$radio-checked-color         : $highlight-color;
+$radio-checked-border-color  : $border-color-base;
+$radio-checked-bg            : $component-background;
+//Disabled
+$radio-disabled-color        : $disabled-color;
+$radio-disabled-border-color : $border-color-base;
+$radio-disabled-bg           : $disabled-bg;
+//Focus
+$radio-focus-border-color    : $highlight-color;
