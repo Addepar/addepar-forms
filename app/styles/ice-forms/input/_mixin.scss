@@ -31,14 +31,15 @@
 // }
 
 // input status
-// when focus or actived
+// when :focus or :active
 @mixin active($color: $outline-color) {
   border-color: $color;
   outline: 0;
-  box-shadow: 0 0 $outline-blur-size $outline-width lighten($color, 20%);
+  //should outline color if box-shadow turned on
+  box-shadow: none;
 }
 
-// when hoverd
+// when :hover
 @mixin hover($color: $input-hover-border-color) {
   border-color: $color;
 }
@@ -47,9 +48,8 @@
   background-color: $input-disabled-bg;
   opacity: 1;
   cursor: not-allowed;
-  color: $disabled-color;
-  &:hover {
-    @include hover($input-border-color);
+  &:focus {
+    @include active($input-border-color);
   }
 }
 

@@ -40,10 +40,8 @@
   letter-spacing: $input-letter-spacing;
   color: $input-color;
   background-color: $input-bg;
-  background-image: none;
   border: $border-width-base $border-style-base $input-border-color;
-  border-radius: $border-radius-base;
-  transition: all .3s;
+  transition: all .15s;
 
   &:hover {
     @include hover();
@@ -53,7 +51,7 @@
     @include active();
   }
 
-  &-disabled {
+  &:disabled {
     @include disabled();
   }
 
