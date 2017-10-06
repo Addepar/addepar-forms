@@ -26,12 +26,11 @@ $checkbox-prefix-cls: #{$ice-prefix}-checkbox;
     vertical-align: top;
     outline: none;
 
-    &:hover {
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
 
   .#{$checkbox-inner-prefix-cls} {
+    box-sizing: border-box;
     // could become a placeholder for checkbox and radio
     height: $checkbox-mark-height;
     width: $checkbox-mark-width;

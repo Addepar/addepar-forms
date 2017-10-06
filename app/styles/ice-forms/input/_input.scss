@@ -1,5 +1,7 @@
+$input-prefix-cls: #{$ice-prefix}-input;
+
 // Input styles
-.#{$ice-prefix}-input {
+.#{$input-prefix-cls} {
   @extend %input;
 }
 
@@ -56,12 +58,12 @@
     @include disabled();
   }
 
-  // Reset height for `textarea`s
-  // textarea& {
-  //   max-width: 100%; // prevent textearea resize from coming out of its container
-  //   height: auto;
-  //   vertical-align: bottom;
-  // }
+  //Reset height for `textarea`s
+  @at-root textarea#{&} {
+    max-width: 100%; // prevent textearea resize from coming out of its container
+    height: auto;
+    vertical-align: bottom;
+  }
 
   // Size
   // &-lg {
