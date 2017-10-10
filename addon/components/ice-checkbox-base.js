@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   tagName: 'input',
   value: null,
   type: 'checkbox',
+  name: null,
 
   attributeBindings: ['type', 'checked', 'disabled', 'indeterminate', 'value'],
 

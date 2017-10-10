@@ -2,21 +2,28 @@
 
 <div class="demo-container">
   <div class="demo-item">
-    <h3>Radio</h3>
     {{ice-radio
-        value=1 
-        groupValue=someValue 
-        disabled=disabled 
-        on-change=(action (mut someValue))
-    }}
-    {{ice-radio 
-      radioId="second" 
-      value=2 
+      radioId="first"
+      inline=true
+      label="first"
+      value=1 
       groupValue=someValue 
       disabled=disabled 
       on-change=(action (mut someValue))
     }}
     {{ice-radio 
+      radioId="second"
+      inline=true
+      label="second" 
+      value=2 
+      groupValue=someValue 
+      disabled=disabled 
+      on-change=(action (mut someValue))
+    }}
+    {{ice-radio
+      radioId="third"
+      inline=true
+      label="third"  
       value=3 
       groupValue=someValue 
       disabled=disabled 

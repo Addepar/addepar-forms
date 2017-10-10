@@ -1,8 +1,24 @@
-{{ice-radio-base
-  id=radioId
-  disabled=disabled
-  groupValue=groupValue
-  value=value
-  on-change="sendChange"
-}}
-<div class="ice-radio-mark"></div>
+{{#if inline}}
+  {{ice-radio-base
+    id=radioId
+    disabled=disabled
+    groupValue=groupValue
+    value=value
+    name=name
+    on-change="sendChange"
+  }}
+  <div class="ice-radio-mark"></div>
+  {{label}}
+{{else}}
+  <label>
+    {{ice-radio-base
+      id=radioId
+      disabled=disabled
+      groupValue=groupValue
+      value=value
+      name=name
+      on-change="sendChange"
+    }}
+    {{label}}
+  </label>
+{{/if}}

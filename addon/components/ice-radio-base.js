@@ -7,6 +7,7 @@ export default Ember.Component.extend({
   groupValue: null,
   tagName: 'input',
   type: 'radio',
+  name: null,
   attributeBindings: ['type', 'checked', 'value', 'disabled'],
 
   checked: computed('value', 'groupValue', {

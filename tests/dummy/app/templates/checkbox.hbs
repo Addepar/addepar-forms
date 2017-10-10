@@ -2,40 +2,36 @@
 
 <div class="demo-container">
   <div class="demo-item">
-    {{#ice-checkbox
-        checked=checked
-        indeterminate=indeterminate
-        disabled=disabled
-        on-change=(action (mut checked))
+    {{ice-checkbox
+      checked=checked
+      indeterminate=indeterminate
+      disabled=disabled
+      on-change=(action (mut checked))
+      label="Checkbox"
     }}
-      <label>Checkbox:</label>
-    {{/ice-checkbox}}
   </div>
   <div class="demo-item">
-    {{#ice-checkbox
-        checked=true
-        indeterminate=indeterminate
-        disabled=disabled
+    {{ice-checkbox
+      checked=true
+      indeterminate=indeterminate
+      disabled=disabled
+      label="Checked Checkbox"
     }}
-      <label>Checked Checkbox:</label>
-    {{/ice-checkbox}}
   </div>
   <div class="demo-item">
-    {{#ice-checkbox
-        checked=checked
-        indeterminate=true
-        disabled=disabled
+    {{ice-checkbox
+      checked=checked
+      indeterminate=true
+      disabled=disabled
+      label="Indeterminate Checkbox"
     }}
-      <label>Indeterminate Checkbox:</label>>
-    {{/ice-checkbox}}
   </div>
   <div class="demo-item">
-    {{#ice-checkbox
-        checked=checked
-        indeterminate=indeterminate
-        disabled=true
+    {{ice-checkbox
+      checked=checked
+      indeterminate=indeterminate
+      disabled=true
+      label="Disabled Checkbox"
     }}
-      <label>Disabled Checkbox:</label>
-    {{/ice-checkbox}}
   </div>
 </div>

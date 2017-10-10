@@ -1,11 +1,26 @@
 <!-- https://github.com/firefly-ui/ff-checkbox/blob/master/addon/templates/components/ff-checkbox.hbs -->
-
-{{yield}}
-{{ice-checkbox-base
-  on-change="sendChecked"
-  value=value
-  checked=checked
-  disabled=disabled
-  indeterminate=indeterminate
-}}
-<div class="ice-checkbox-mark"></div>
+{{#if inline}}
+  {{ice-checkbox-base
+    on-change="sendChecked"
+    value=value
+    checked=checked
+    disabled=disabled
+    indeterminate=indeterminate
+    name=name
+  }}
+  <div class="ice-checkbox-mark"></div>
+  {{label}}
+{{else}}
+    <label>
+      {{ice-checkbox-base
+        on-change="sendChecked"
+        value=value
+        checked=checked
+        disabled=disabled
+        indeterminate=indeterminate
+        name=name
+      }}
+      <div class="ice-checkbox-mark"></div>
+      {{label}}
+    </label>
+{{/if}}
