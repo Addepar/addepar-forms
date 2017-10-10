@@ -1,0 +1,31 @@
+// Checkbox
+// ---
+$checkbox-line-height        : $line-height-base !default;
+$checkbox-input-type-height  : 14px !default;
+$checkbox-input-type-width   : 14px !default;
+$checkbox-border             : solid $global-border-size !default;
+$checkbox-border-radius      : $border-radius-none !default;
+$checkbox-input-margin-top   : 0 !default;
+$checkbox-input-margin-right : -1rem !default;
+$checkbox-input-margin-bottom: -1rem !default;
+$checkbox-input-margin-left  : 0 !default;
+$checkbox-mark-height        : $checkbox-input-type-height !default;
+$checkbox-mark-width         : $checkbox-input-type-width !default;
+// Unchecked
+$checkbox-unchecked-color    : $text-dark !default;
+$checkbox-unchecked-border-color: $border-item !default;
+$checkbox-unchecked-bg       : $background-white !default;
+//Checked
+$checkbox-checked-color      : $text-blue !default;
+$checkbox-checked-border-color: $border-item !default;
+$checkbox-checked-bg         : $background-white !default;
+//Indeterminate
+$checkbox-indeterminate-color: $text-blue !default;
+$checkbox-indeterminate-border-color: $text-disabled !default;
+$checkbox-indeterminate-bg   : $background-white !default;
+//Disabled
+$checkbox-disabled-color     : $text-disabled !default;
+$checkbox-disabled-border-color: $border-item !default;
+$checkbox-disabled-bg        : $background-medium !default;
+//Focus
+$checkbox-focus-border-color : $text-blue !default;

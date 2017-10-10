@@ -32,7 +32,7 @@
 
 // input status
 // when :focus or :active
-@mixin active($color: $outline-color) {
+@mixin active($color: $border-blue) {
   border-color: $color;
   outline: 0;
   //should outline color if box-shadow turned on

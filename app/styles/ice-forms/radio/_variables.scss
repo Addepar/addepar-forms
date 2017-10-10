@@ -1,0 +1,27 @@
+// Radio
+// ---
+$radio-line-height           : $line-height-base !default;
+$radio-input-type-height     : 14px !default;
+$radio-input-type-width      : 14px !default;
+$radio-border                : solid $global-border-size !default;
+$radio-border-radius         : $border-radius-circle !default;
+$radio-input-margin-top      : 0 !default;
+$radio-input-margin-right    : -1rem !default;
+$radio-input-margin-bottom   : -1rem !default;
+$radio-input-margin-left     : 0 !default;
+$radio-mark-height           : $radio-input-type-height !default;
+$radio-mark-width            : $radio-input-type-width !default;
+//Unchecked
+$radio-unchecked-color       : $text-dark !default;
+$radio-unchecked-border-color: $border-item !default;
+$radio-unchecked-bg          : $background-white !default;
+//Checked
+$radio-checked-color         : $border-blue !default;
+$radio-checked-border-color  : $border-item !default;
+$radio-checked-bg            : $background-white !default;
+//Disabled
+$radio-disabled-color        : $text-disabled !default;
+$radio-disabled-border-color : $border-item !default;
+$radio-disabled-bg           : $background-medium-dark !default;
+//Focus
+$radio-focus-border-color    : $border-blue !default;

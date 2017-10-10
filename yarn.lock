@@ -11,11 +11,11 @@
     eslint-plugin-fat-arrow-same-line "^0.1.0"
     eslint-plugin-import "^2.3.0"
 
-"@addepar/ice-box@^0.0.5":
-  version "0.0.5"
-  resolved "https://addepar.jfrog.io/addepar/api/npm/npm/@addepar/ice-box/-/@addepar/ice-box-0.0.5.tgz#868cd45be9c5d49b20f021e6254b0f195fb48282"
+"@addepar/ice-box@^0.1.0":
+  version "0.1.0"
+  resolved "https://addepar.jfrog.io/addepar/api/npm/npm/@addepar/ice-box/-/@addepar/ice-box-0.1.0.tgz#5c0d76e1282949a3f08e58188fbde3f221ba1d37"
   dependencies:
-    ember-cli-babel "^6.0.0"
+    ember-cli-babel "^6.3.0"
 
 "@addepar/sass-lint-config@^1.0.0":
   version "1.0.0"

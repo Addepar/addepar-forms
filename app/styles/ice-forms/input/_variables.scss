@@ -1,0 +1,19 @@
+// Input
+// ---
+$input-height-base           : 35px !default;
+$input-height-lg             : 60px !default;
+$input-height-sm             : 22px !default;
+$input-padding-horizontal    : 10px !default;
+$input-padding-vertical-base : 6px !default;
+$input-padding-vertical-sm   : 1px !default;
+$input-padding-vertical-lg   : 10px !default;
+$input-border                : solid $global-border-size !default;
+$input-border-radius         : $border-radius-none !default;
+$input-placeholder-color     : $text-disabled !default;
+$input-color                 : $text-dark !default;
+$input-border-color          : $border-item !default;
+$input-bg                    : $background-white !default;
+$input-addon-bg              : $brand-blue-gray !default;
+$input-hover-border-color    : $border-item !default;
+$input-disabled-bg           : $text-disabled !default;
+$input-letter-spacing        : $standard-letter-spacing !default;
