@@ -1,7 +1,7 @@
-import Component from '@ember/component';
+import Ember from 'ember';
 import layout from '../templates/components/ice-input';
 
-export default Component.extend({
+export default Ember.Component.extend({
   classNames: ['ice-input'],
   layout,
   label: null,

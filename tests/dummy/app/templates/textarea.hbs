@@ -1,16 +1,22 @@
 <h2 class="title">Textarea</h2>
 
 <div class="demo-container">
+  <h3>Textarea</h3>
   <div class="demo-item">
-    <h3>Textarea</h3>
     {{ice-textarea
       placeholder="testing..."
     }}
   </div>
   <div class="demo-item">
-    <h3>Disabled Textarea</h3>
+    {{ice-textarea
+      placeholder="testing..."
+      label="Textarea with label"
+    }}
+  </div>
+  <div class="demo-item">
     {{ice-textarea 
       disabled="true"
+      label="Disabled Textarea"
     }}
   </div>
 </div>

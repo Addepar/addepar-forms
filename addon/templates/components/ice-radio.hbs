@@ -8,7 +8,7 @@
     on-change="sendChange"
   }}
   <div class="ice-radio-mark"></div>
-  {{label}}
+  <label>{{label}}</label>
 {{else}}
   <label>
     {{ice-radio-base
@@ -19,6 +19,7 @@
       name=name
       on-change="sendChange"
     }}
+    <div class="ice-radio-mark"></div>
     {{label}}
   </label>
 {{/if}}

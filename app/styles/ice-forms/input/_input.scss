@@ -1,8 +1,11 @@
 $input-prefix-cls: #{$ice-prefix}-input;
 
 // Input styles
-.#{$input-prefix-cls} input {
-  @extend %input;
+.#{$input-prefix-cls} {
+  input,
+  textarea {
+    @extend %input;
+  }
 }
 
 // //== Style for input-group: input with label, with button or dropdown...
