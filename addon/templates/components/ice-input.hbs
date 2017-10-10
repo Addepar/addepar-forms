@@ -1,0 +1,20 @@
+{{#if label}}
+  <label for={{inputId}}>
+    {{label}}
+  </label>
+{{/if}}
+
+{{input
+  id=inputId
+  type=type
+  class=inputClass
+  disabled=disabled
+  name=name
+  placeholder=placeholder
+  readonly=readonlyString
+  value=value
+}}
+
+{{#if helpText}}
+  <p class="help-block">{{helpText}}</p>
+{{/if}}

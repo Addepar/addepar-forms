@@ -43,9 +43,5 @@ $demo-container-width: 400px;
 }
 
 .demo-item {
-  display: flex;
-  flex: 1 0 $demo-container-width/3;
-  align-items: center;
-  flex-wrap: wrap;
   margin-bottom: 20px;
 }

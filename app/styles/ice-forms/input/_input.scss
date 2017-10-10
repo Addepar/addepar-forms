@@ -1,7 +1,7 @@
 $input-prefix-cls: #{$ice-prefix}-input;
 
 // Input styles
-.#{$input-prefix-cls} {
+.#{$input-prefix-cls} input {
   @extend %input;
 }
 
