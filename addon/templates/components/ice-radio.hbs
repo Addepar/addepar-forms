@@ -1,0 +1,25 @@
+{{#if inline}}
+  {{ice-radio-base
+    id=radioId
+    disabled=disabled
+    groupValue=groupValue
+    value=value
+    name=name
+    on-change="sendChange"
+  }}
+  <div class="ice-radio-mark"></div>
+  <label for={{radioId}}>{{label}}</label>
+{{else}}
+  <label>
+    {{ice-radio-base
+      id=radioId
+      disabled=disabled
+      groupValue=groupValue
+      value=value
+      name=name
+      on-change="sendChange"
+    }}
+    <div class="ice-radio-mark"></div>
+    {{label}}
+  </label>
+{{/if}}

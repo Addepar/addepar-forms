@@ -1,0 +1,33 @@
+<h2 class="title">Radio</h2>
+
+<div class="demo-container">
+  <div class="demo-item">
+    {{ice-radio
+      radioId="first"
+      inline=false
+      label="first"
+      value=1 
+      groupValue=someValue 
+      disabled=disabled 
+      on-change=(action (mut someValue))
+    }}
+    {{ice-radio 
+      radioId="second"
+      inline=false
+      label="second" 
+      value=2 
+      groupValue=someValue 
+      disabled=disabled 
+      on-change=(action (mut someValue))
+    }}
+    {{ice-radio
+      radioId="third"
+      inline=false
+      label="third"  
+      value=3 
+      groupValue=someValue 
+      disabled=disabled 
+      on-change=(action (mut someValue))
+    }}
+  </div>
+</div>

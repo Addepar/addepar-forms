@@ -1,0 +1,96 @@
+$radio-prefix-cls: #{$ice-prefix}-radio;
+
+.#{$radio-prefix-cls} {
+  $radio-inner-prefix-cls: #{$radio-prefix-cls}-mark;
+
+  display: inline-block;
+  position: relative;
+
+  line-height: $radio-line-height;
+
+  input[type="radio"] {
+    height: $radio-input-type-height;
+    width: $radio-input-type-width;
+
+    margin-top: $radio-input-margin-top;
+    margin-right: $radio-input-margin-right;
+    margin-bottom: $radio-input-margin-bottom;
+    margin-left: $radio-input-margin-left;
+
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    opacity: 0.001;
+    z-index: 1;
+    vertical-align: top;
+    outline: none;
+
+    cursor: pointer;
+  }
+
+  .#{$radio-inner-prefix-cls} {
+    box-sizing: border-box;
+    height: $radio-mark-height;
+    width: $radio-mark-width;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: $radio-border-radius;
+    border: $radio-border;
+
+    border-color: $radio-unchecked-border-color;
+    background-color: $radio-unchecked-bg;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+  }
+
+  input[type="radio"] {
+    &:checked {
+      + .#{$radio-inner-prefix-cls} {
+        border-color: $radio-checked-border-color;
+        background-color: $radio-checked-bg;
+
+        &::before {
+          $width: $radio-mark-width - 2px;
+          $height: $radio-mark-height - 2px;
+          top: ($radio-mark-height - $height) / 2;
+          left: ($radio-mark-width - $width) / 2;
+          width: $width;
+          height: $height;
+
+          border-radius: $radio-border-radius;
+          background-color: $radio-checked-color;
+        }
+      }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      + .#{$radio-inner-prefix-cls} {
+        border-color: $radio-disabled-border-color;
+        background-color: $radio-disabled-bg;
+
+        &::before {
+          background-color: $radio-disabled-color;
+        }
+      }
+    }
+
+    &:focus {
+      + .#{$radio-inner-prefix-cls} {
+        border-color: $radio-focus-border-color;
+      }
+
+      &:checked {
+        + .#{$radio-inner-prefix-cls} {
+          border-color: darken($radio-checked-border-color, 15%);
+        }
+      }
+    }
+  }
+}

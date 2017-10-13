@@ -1,0 +1,60 @@
+// @import "../themes/default";
+
+//$input-affix-width: 17px;
+
+// Placeholder text
+// @mixin placeholder($color: $input-placeholder-color) {
+//   // Firefox
+//   &::-moz-placeholder {
+//     color: $color;
+//     opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+//   }
+//   // Internet Explorer 10+
+//   &:-ms-input-placeholder {
+//     color: $color;
+//   }
+//   // Safari and Chrome
+//   &::-webkit-input-placeholder {
+//     color: $color;
+//   }
+// }
+
+// size placeholders for input
+// @mixin input-lg() {
+//   padding: $input-padding-vertical-lg $input-padding-horizontal;
+//   height: $input-height-lg;
+// }
+
+// @mixin input-sm() {
+//   padding: $input-padding-vertical-sm $input-padding-horizontal;
+//   height: $input-height-sm;
+// }
+
+// input status
+// when :focus or :active
+@mixin active($color: $border-blue) {
+  border-color: $color;
+  outline: 0;
+  //should outline color if box-shadow turned on
+  box-shadow: none;
+}
+
+// when :hover
+@mixin hover($color: $input-hover-border-color) {
+  border-color: $color;
+}
+
+@mixin disabled() {
+  background-color: $input-disabled-bg;
+  cursor: not-allowed;
+  &:focus {
+    @include active($input-border-color);
+  }
+}
+
+@mixin readonly() {
+  cursor: default;
+  &:focus {
+    @include active($input-border-color);
+  }
+}
