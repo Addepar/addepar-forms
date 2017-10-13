@@ -46,8 +46,14 @@
 
 @mixin disabled() {
   background-color: $input-disabled-bg;
-  opacity: 1;
   cursor: not-allowed;
+  &:focus {
+    @include active($input-border-color);
+  }
+}
+
+@mixin readonly() {
+  cursor: default;
   &:focus {
     @include active($input-border-color);
   }

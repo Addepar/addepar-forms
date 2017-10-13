@@ -1,11 +1,14 @@
 import Ember from 'ember';
 import layout from '../templates/components/ice-input';
 
+const { computed } = Ember;
+
 export default Ember.Component.extend({
-  classNames: ['ice-input'],
   layout,
+  classNameBindings: ['label:ice-form-control'],
   label: null,
   helpText: null,
+  inputClass: 'ice-input',
 
   /**
    * If true, this component will auto focus itself after insertion into the dom
@@ -21,10 +24,15 @@ export default Ember.Component.extend({
     }
   },
 
+  change(e) {
+    this.sendAction('onChange', e);
+  },
+
   focusIn(e) {
     this.sendAction('onFocusIn', e);
   },
 
+  //onBlur?
   focusOut(e) {
     this.sendAction('onFocusOut', e);
   },
@@ -42,5 +50,5 @@ export default Ember.Component.extend({
 
   keyUp(e) {
     this.sendAction('onKeyUp', e);
-  }
+  },
 });

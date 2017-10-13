@@ -6,6 +6,10 @@ export default Route.extend({
   actions: {
     eventHanlders(e) {
      console.log(e.type);
+    },
+
+    onChangeHandler(e) {
+      console.log(e);
     }
   }
 });

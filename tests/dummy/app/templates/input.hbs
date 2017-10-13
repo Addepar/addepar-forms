@@ -6,6 +6,8 @@
     {{ice-input 
       type="text"
       shouldFocus=true
+      placeholder="input placeholder"
+      onChange="onChangeHandler"
       onFocusIn="eventHanlders"
     }}
   </div>
@@ -13,15 +15,24 @@
     {{ice-input 
       type="text"
       inputId="text1"
-      label="<h1>Text Input with Label</h1>"
+      label="Text Input with Label"
     }}
   </div>
   <div class="demo-item">
     {{ice-input 
       type="text"
       inputId="text2"
-      disabled="true"
+      disabled=true
       label="Disabled Text Input"
+    }}
+  </div>
+  <div class="demo-item">
+    {{ice-input 
+      type="text"
+      inputId="text22"
+      label="Readonly Text Input"
+      readonly=true
+      value="readonly"
     }}
   </div>
   <div class="demo-item">
@@ -29,6 +40,7 @@
       type="text"
       inputId="text3"
       label="Text Input with Event handlers"
+      onChange="onChangeHandler"
       onFocusIn="eventHanlders"
       onFocusOut="eventHanlders"
       onKeyDown="eventHanlders"

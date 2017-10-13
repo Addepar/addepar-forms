@@ -2,10 +2,7 @@ $input-prefix-cls: #{$ice-prefix}-input;
 
 // Input styles
 .#{$input-prefix-cls} {
-  input,
-  textarea {
-    @extend %input;
-  }
+  @extend %input;
 }
 
 // //== Style for input-group: input with label, with button or dropdown...
@@ -59,6 +56,10 @@ $input-prefix-cls: #{$ice-prefix}-input;
 
   &:disabled {
     @include disabled();
+  }
+
+  &:read-only {
+    @include readonly();
   }
 
   //Reset height for `textarea`s

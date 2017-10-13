@@ -1,7 +1,6 @@
-import Ember from 'ember';
+import IceInput from './ice-input';
 import layout from '../templates/components/ice-textarea';
 
-export default Ember.Component.extend({
-  layout,
-  classNames: ['ice-input'],
+export default IceInput.extend({
+  layout
 });
