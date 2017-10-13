@@ -20,4 +20,24 @@ export default Ember.Component.extend({
       this.$("input").focus();
     }
   },
+
+  focusIn(e) {
+    this.sendAction('onFocusIn', e);
+  },
+
+  focusOut(e) {
+    this.sendAction('onFocusOut', e);
+  },
+
+  keyDown(e) {
+    this.sendAction('onKeyDown', e);
+  },
+
+  keyPress(e) {
+    this.sendAction('onKeyPress', e);
+  },
+
+  keyUp(e) {
+    this.sendAction('onKeyUp', e);
+  }
 });
