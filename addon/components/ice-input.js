@@ -8,7 +8,11 @@ export default Ember.Component.extend({
   classNameBindings: ['label:ice-form-control'],
   label: null,
   helpText: null,
-  inputClass: 'ice-input',
+  className: '',
+  inputClass: computed('className', function() {
+    const cls = `${this.get('className')} ice-input`;
+    return cls;
+  }),
 
   /**
    * If true, this component will auto focus itself after insertion into the dom
