@@ -34,7 +34,10 @@ export default Ember.Component.extend({
   },
 
   keyPress(e) {
-    this.sendAction('onKeyPress', e);
+    // rn I assume we only cares about the case when enter is pressed
+    if(e.keyCode === 13) {
+      this.sendAction('onKeyPress', e);
+    }
   },
 
   keyUp(e) {
