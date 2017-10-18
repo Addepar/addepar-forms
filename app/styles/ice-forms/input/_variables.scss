@@ -10,7 +10,7 @@ $input-transition-speed:              0.1s !default;
 $input-font-size-base:                $font-size-base !default;
 $input-line-height-base:              $line-height-large !default;
 $input-color-base:                    $text-dark !default;
-$input-placeholder-color-base:        $text-disabled !default;
+$input-placeholder-color-base:        $text-light !default;
 $input-cursor-base:                   text !default;
 
 // Layout
@@ -32,11 +32,19 @@ $input-default-bg-color:              $background-white !default;
 $input-default-cursor:                $input-cursor-base !default;
 
 
+// Hover state
+$input-hover-color:                 $input-color-base !default;
+$input-hover-border-color:          darken($border-input, 18%) !default;
+$input-hover-bg-color:              $background-white !default;
+$input-hover-cursor:                $input-cursor-base !default;
+
+
 // Focused state
 $input-focused-color:                 $input-color-base !default;
 $input-focused-border-color:          $border-blue !default;
 $input-focused-bg-color:              $background-extra-light !default;
 $input-focused-cursor:                $input-cursor-base !default;
+
 
 // Disabled state
 $input-disabled-color:                $text-dark !default;

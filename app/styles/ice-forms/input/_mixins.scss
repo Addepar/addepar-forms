@@ -60,7 +60,7 @@
 
 // when :hover
 @mixin hover() {
-  border-color: $color;
+  @include input-type($input-hover-bg-color, $input-hover-border-color, $input-hover-color, $input-hover-cursor); 
 }
 
 
