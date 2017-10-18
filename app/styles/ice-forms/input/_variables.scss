@@ -1,0 +1,84 @@
+// Core Input Variables  
+// ---
+
+
+//think we could have a global variable for it
+$ice-input-transition-speed:              0.1s !default;
+
+
+// Text
+$ice-input-font-size-base:                $font-size-base !default;
+$ice-input-line-height-base:              $line-height-large !default;
+$ice-input-color-base:                    $text-dark !default;
+$ice-input-placeholder-color-base:        $text-light !default;
+$ice-input-cursor-base:                   text !default;
+
+// Layout
+$ice-input-height-base:                   $spacing-default * 4 !default;
+$ice-input-height-sm:                     $spacing-default * 3 !default;
+
+$ice-input-padding-horizontal-base:       $spacing-default !default;
+$ice-input-padding-vertical-base:         $spacing-default - 1px !default;
+$ice-input-padding-vertical-sm:           $spacing-default/2 - 1px !default;
+
+$ice-input-border:                        $border-input solid !default;
+$ice-input-border-width:                  $global-border-size !default;
+$ice-input-border-radius:                 $border-radius-none !default;
+
+$ice-input-box-shadow:                    0 0 5px rgba(0, 0, 0, 0.1) !default;
+
+// Default state
+$ice-input-default-color:                 $ice-input-color-base !default;
+$ice-input-default-border-color:          $border-input !default;
+$ice-input-default-bg-color:              $background-white !default;
+$ice-input-default-cursor:                $ice-input-cursor-base !default;
+
+
+// Hover state
+$ice-input-hover-color:                 $ice-input-color-base !default;
+$ice-input-hover-border-color:          darken($border-input, 18%) !default;
+$ice-input-hover-bg-color:              $background-white !default;
+$ice-input-hover-cursor:                $ice-input-cursor-base !default;
+
+
+// Focused state
+$ice-input-focused-color:                 $ice-input-color-base !default;
+$ice-input-focused-border-color:          $border-blue !default;
+$ice-input-focused-bg-color:              $background-extra-light !default;
+$ice-input-focused-cursor:                $ice-input-cursor-base !default;
+
+
+// Disabled state
+$ice-input-disabled-color:                $text-light !default;
+$ice-input-disabled-bg-color:             $background-light !default;
+$ice-input-disabled-border-color:         $border-input !default;
+$ice-input-disabled-placeholder-color:    $ice-input-disabled-bg-color !default;
+$ice-input-disabled-cursor:               not-allowed !default;
+
+
+// Read Only state
+$ice-input-readonly-color:                $text-dark !default;
+$ice-input-readonly-border-color:         transparent !default;
+$ice-input-readonly-bg-color:             transparent !default;
+$ice-input-readonly-cursor:               default !default;
+
+
+// Error state
+$ice-input-error-color:                   $text-red !default;
+$ice-input-error-border-color:            $border-red !default;
+$ice-input-error-bg-color:                $background-white !default;
+$ice-input-error-cursor:                  $ice-input-cursor-base !default;
+
+
+// Warning state
+$ice-input-warning-color:                 $text-yellow !default;
+$ice-input-warning-border-color:          $border-yellow !default;
+$ice-input-warning-bg-color:              $background-white !default;
+$ice-input-warning-cursor:                $ice-input-cursor-base !default;
+
+
+// Input icon
+
+
+// Input group
+
