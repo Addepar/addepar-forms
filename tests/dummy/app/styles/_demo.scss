@@ -1,0 +1,53 @@
+$demo-container-width: 400px;
+
+
+// I assume we will set this somewhere in the high level of our app
+* {
+  box-sizing: border-box;
+}
+
+.demo-header,
+.title {
+  text-align: center;
+}
+
+.scroll-container {
+  height: 400px;
+  width: 400px;
+  overflow: scroll;
+  margin: auto;
+  border: 2px solid grey;
+}
+
+.item-container {
+  height: 1000px;
+  width: 800px;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-text {
+  text-align: center;
+}
+
+.demo-container {
+  margin: 50px auto;
+  width: $demo-container-width;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.demo-header {
+  margin-bottom: 0;
+}
+
+.demo-item {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,78 @@
+// Core Input Variables  
+// ---
+
+
+//think we could have a global variable for it
+$input-transition-speed:              0.1s !default;
+
+
+// Text
+$input-font-size-base:                $font-size-base !default;
+$input-line-height-base:              $line-height-large !default;
+$input-color-base:                    $text-dark !default;
+$input-placeholder-color-base:        $text-disabled !default;
+$input-cursor-base:                   text !default;
+
+// Layout
+$input-height-base:                   $spacing-default * 4 !default;
+$input-height-sm:                     $spacing-default * 3 !default;
+
+$input-padding-horizontal-base:       $spacing-default !default;
+$input-padding-vertical-base:         $spacing-default - 1px !default;
+$input-padding-vertical-sm:           $spacing-default/2 - 1px !default;
+
+$input-border:                        $global-border-size solid !default;
+$input-border-radius:                 $border-radius-none !default;
+
+
+// Default state
+$input-default-color:                 $input-color-base !default;
+$input-default-border-color:          $border-input !default;
+$input-default-bg-color:              $background-white !default;
+$input-default-cursor:                $input-cursor-base !default;
+
+
+// Focused state
+$input-focused-color:                 $input-color-base !default;
+$input-focused-border-color:          $border-blue !default;
+$input-focused-bg-color:              $background-extra-light !default;
+$input-focused-cursor:                $input-cursor-base !default;
+
+// Disabled state
+$input-disabled-color:                $text-dark !default;
+$input-disabled-bg-color:             $background-light !default;
+$input-disabled-border-color:         $border-input !default;
+$input-disabled-cursor:               not-allowed !default;
+
+
+// Read Only state
+$input-readonly-color:                $text-dark !default;
+$input-readonly-border-color:         transparent !default;
+$input-readonly-bg-color:             $background-white !default;
+$input-readonly-cursor:               default !default;
+
+
+// Error state
+$input-error-color:                   $text-dark !default;
+$input-error-border-color:            $border-red !default;
+$input-error-bg-color:                $background-white !default;
+$input-error-cursor:                  $input-cursor-base !default;
+
+
+// Warning state
+$input-warning-color:                 $text-dark !default;
+$input-warning-border-color:          $border-yellow !default;
+$input-warning-bg-color:              $background-white !default;
+$input-warning-cursor:                $input-cursor-base !default;
+
+
+// Hover State
+//$input-hover-border-color:    $border-item !default;
+
+
+// Input icon
+$input-icon-bg:               $brand-blue-gray !default;
+
+
+// Input group
+

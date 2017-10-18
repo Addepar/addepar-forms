@@ -1,0 +1,58 @@
+%input {
+  @include placeholder($input-placeholder-color-base); // Reset placeholder
+  
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-size: $input-font-size-base;
+  line-height: $input-line-height-base;
+  border: $input-border;
+  border-radius: $input-border-radius;
+  transition: all $input-transition-speed;
+
+  @include default();
+
+  // &:hover {
+  //   @include hover();
+  // }
+
+  &:focus,
+  &:active,
+  &.is-active {
+    @include active();
+  }
+
+  &:disabled {
+    @include disabled();
+  }
+
+  &:read-only {
+    @include readonly();
+  }
+
+  &.is-error {
+    @include error();
+  }
+
+  &.is-warning {
+    @include warning();
+  }
+
+  //Reset height for `textarea`s
+  @at-root textarea#{&} {
+    max-width: 100%; // prevent textearea resize from coming out of its container
+    height: auto;
+    vertical-align: bottom;
+  }
+}
+
+.ice-input {
+  @extend %input;
+  @include inputSize();
+}
+
+// Size
+.ice-input-sm {
+  @extend %input;
+  @include inputSize("small");
+}
