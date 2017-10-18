@@ -7,10 +7,14 @@ export default TextField.extend({
   className: '',
   inputSize: '',
   error: false,
+
+  /**
+   * If true, this component will auto focus itself after insertion into the dom
+   * @type {boolean}
+  */
+  shouldFocus: false,
+
   warning: false,
-  inputId: computed(function(){
-    return `input-${guidFor(this)}`;
-  }),
   inputClass: computed('inputSize', function() {
     let cls = 'ice-input';
     const size = this.get('inputSize');
@@ -22,11 +26,13 @@ export default TextField.extend({
     return cls;
   }),
 
-  /**
-   * If true, this component will auto focus itself after insertion into the dom
-   * @type {boolean}
-  */
-  shouldFocus: false,
+  didReceiveAttrs() {
+    this._super(...arguments);
+
+    if(this.get('disabled')) {
+      this.set('placeholder', '');
+    }
+  },
 
   didInsertElement() {
     this._super(...arguments);
