@@ -29,6 +29,7 @@ export default TextField.extend({
   didReceiveAttrs() {
     this._super(...arguments);
 
+    // when in disabled state, placeholder is disabled
     if(this.get('disabled')) {
       this.set('placeholder', '');
     }

@@ -1,3 +1,7 @@
+// Core Input Mixins
+// -----------------------------------------------------------------------------
+
+
 @mixin placeholder($color) {
   // Firefox
   &::-moz-placeholder {
@@ -44,15 +48,25 @@
 
 // Maybe could be reused across other components 
 // Input status
-// default
+// when default
 @mixin default() {
-  @include input-type($input-default-bg-color, $input-default-border-color, $input-default-color, $input-default-cursor); 
+  @include input-type(
+    $input-default-bg-color, 
+    $input-default-border-color, 
+    $input-default-color, 
+    $input-default-cursor
+  ); 
 }
 
 
 // when :focus or :active
 @mixin active() {
-  @include input-type($input-focused-bg-color, $input-focused-border-color, $input-focused-color, $input-focused-cursor);
+  @include input-type(
+    $input-focused-bg-color, 
+    $input-focused-border-color, 
+    $input-focused-color, 
+    $input-focused-cursor
+  );
 
   outline: 0;
 }
@@ -60,29 +74,54 @@
 
 // when :hover
 @mixin hover() {
-  @include input-type($input-hover-bg-color, $input-hover-border-color, $input-hover-color, $input-hover-cursor); 
+  @include input-type(
+    $input-hover-bg-color, 
+    $input-hover-border-color, 
+    $input-hover-color, 
+    $input-hover-cursor
+  ); 
 }
 
 
 // when :disabled
 @mixin disabled() {
-  @include input-type($input-disabled-bg-color, $input-disabled-border-color, $input-disabled-color, $input-disabled-cursor); 
+  @include input-type(
+    $input-disabled-bg-color, 
+    $input-disabled-border-color, 
+    $input-disabled-color, 
+    $input-disabled-cursor
+  ); 
 }
 
 
 // when :read-only
 @mixin readonly() {
-  @include input-type($input-readonly-bg-color, $input-readonly-border-color, $input-readonly-color, $input-readonly-cursor); 
+  @include input-type(
+    $input-readonly-bg-color, 
+    $input-readonly-border-color, 
+    $input-readonly-color, 
+    $input-readonly-cursor
+  ); 
 }
 
 
 // when in error
 @mixin error() {
-  @include input-type($input-error-bg-color, $input-error-border-color, $input-error-color, $input-error-cursor); 
+  @include input-type(
+    $input-error-bg-color, 
+    $input-error-border-color, 
+    $input-error-color, 
+    $input-error-cursor
+  ); 
 }
 
 
 // when in warning
 @mixin warning() {
-  @include input-type($input-warning-bg-color, $input-warning-border-color, $input-warning-color, $input-warning-cursor);
+  @include input-type(
+    $input-warning-bg-color, 
+    $input-warning-border-color, 
+    $input-warning-color, 
+    $input-warning-cursor
+  );
 }

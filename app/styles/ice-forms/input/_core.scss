@@ -1,5 +1,6 @@
 %input {
-  @include placeholder($input-placeholder-color-base); // Reset placeholder
+  // Reset placeholder
+  @include placeholder($input-placeholder-color-base);
   
   position: relative;
   display: inline-block;
@@ -12,6 +13,7 @@
 
   @include default();
 
+  // different states
   &:hover {
     @include hover();
   }
@@ -44,6 +46,7 @@
   @extend %input;
   @include inputSize();
 }
+
 
 // Size
 .ice-input-sm {
