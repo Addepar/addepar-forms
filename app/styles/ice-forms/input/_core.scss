@@ -1,0 +1,55 @@
+%input {
+  // Reset placeholder
+  @include placeholder($input-placeholder-color-base);
+  
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-size: $input-font-size-base;
+  line-height: $input-line-height-base;
+  border: $input-border;
+  border-radius: $input-border-radius;
+  transition: all $input-transition-speed;
+
+  @include default();
+
+  // different states
+  &:hover {
+    @include hover();
+  }
+
+  &:focus,
+  &:active,
+  &.is-active {
+    @include active();
+  }
+
+  &:disabled,
+  &.is-disabled {
+    @include disabled();
+  }
+
+  &:read-only {
+    @include readonly();
+  }
+
+  &.is-error {
+    @include error();
+  }
+
+  &.is-warning {
+    @include warning();
+  }
+}
+
+.ice-input {
+  @extend %input;
+  @include inputSize();
+}
+
+
+// Size
+.ice-input-sm {
+  @extend %input;
+  @include inputSize("small");
+}
