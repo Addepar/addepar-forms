@@ -26,15 +26,6 @@ export default TextField.extend({
     return cls;
   }),
 
-  didReceiveAttrs() {
-    this._super(...arguments);
-
-    // when in disabled state, placeholder is disabled
-    if(this.get('disabled')) {
-      this.set('placeholder', '');
-    }
-  },
-
   didInsertElement() {
     this._super(...arguments);
 

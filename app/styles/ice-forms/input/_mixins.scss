@@ -90,7 +90,9 @@
     $input-disabled-border-color, 
     $input-disabled-color, 
     $input-disabled-cursor
-  ); 
+  );
+
+  @include placeholder($input-disabled-placeholder-color); 
 }
 
 
