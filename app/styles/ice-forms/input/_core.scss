@@ -1,15 +1,15 @@
 %input {
   // Reset placeholder
-  @include placeholder($input-placeholder-color-base);
+  @include placeholder($ice-input-placeholder-color-base);
   
   position: relative;
   display: inline-block;
   width: 100%;
-  font-size: $input-font-size-base;
-  line-height: $input-line-height-base;
-  border: $input-border;
-  border-radius: $input-border-radius;
-  transition: all $input-transition-speed;
+  font-size: $ice-input-font-size-base;
+  line-height: $ice-input-line-height-base;
+  border: $ice-input-border-width $ice-input-border;
+  border-radius: $ice-input-border-radius;
+  transition: all $ice-input-transition-speed;
 
   @include default();
 
