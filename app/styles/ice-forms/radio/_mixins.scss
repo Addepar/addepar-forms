@@ -1,0 +1,9 @@
+@mixin radio($height, $width, $color) {
+  &:after {
+    @include check-sign($height, $width);
+
+    background: $color;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: $border-radius-circle;
+  }
+}

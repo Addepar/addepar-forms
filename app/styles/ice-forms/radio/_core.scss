@@ -1,0 +1,116 @@
+.ice-radio {
+  display: inline-block;
+
+  &:hover {
+    .ice-input {
+      &:checked + .ice-radio--faux,
+      &:checked ~ .ice-radio--faux,
+      &:checked + .ice-radio__label .ice-radio--faux {
+        
+      }
+    }
+
+    .ice-radio--faux {
+      @include hover();
+    }
+  }
+
+  .ice-radio--faux {
+    $border: $ice-radio-border-width $ice-radio-border;
+    @include input-faux($ice-radio-faux-size, $border);
+    border-radius: $border-radius-circle;
+  }
+
+  .ice-form-element__label {
+    height: $ice-radio-faux-size;
+    margin-left: $ice-radio-label-spacing;
+  }
+
+  .ice-input {
+    @include hidden-input();
+
+    // States
+    // 1. normal/unchecked
+    //    1. hover;
+    //    2. focus/active;
+    //    3. diabled;
+    // 2. checked
+    //    1. hover;
+    //    2. focus/active;
+    //    3. disabled;
+
+    &:checked + .ice-radio--faux,
+    &:checked ~ .ice-radio--faux,
+    &:checked + .ice-radio__label .ice-radio--faux {
+     @include radio(
+      $ice-radio-check-sign-size,
+      $ice-radio-check-sign-size,
+      $ice-radio-check-sign-color
+     );
+    }
+
+    &:focus,
+    &:active,
+    &.is-active {
+      + .ice-radio--faux,
+      ~ .ice-radio--faux,
+      + .ice-radio__label .ice-radio--faux {
+        content: '';
+        border-color: $ice-radio-focused-border-color;
+      }
+
+      &:checked > .ice-radio--faux,
+      &:checked ~ .ice-radio--faux,
+      &:checked + .ice-radio__label .ice-radio--faux {
+        border-color: $ice-radio-focused-border-color;
+      }
+    }
+
+    &:disabled {
+      + .ice-radio__label .ice-form-element__label {
+        cursor: $ice-radio-disabled-cursor;
+        color: $ice-radio-disabled-color;
+      }
+
+      + .ice-radio--faux,
+      ~ .ice-radio--faux,
+      + .ice-radio__label .ice-radio--faux {
+        @include disabled();
+      }
+  
+      &:checked + .ice-radio--faux,
+      &:checked ~ .ice-radio--faux,
+      &:checked + .ice-radio__label .ice-radio--faux {
+        @include radio(
+          $ice-radio-check-sign-size,
+          $ice-radio-check-sign-size,
+          $ice-radio-disabled-color
+        );
+      }
+  
+      &:focus,
+      &:active,
+      &.is-active {
+        + .ice-radio--faux,
+        ~ .ice-radio--faux,
+        + .ice-radio__label .ice-radio--faux {
+          content: '';
+          border-color: $ice-radio-focused-border-color;
+        }
+  
+        &:checked > .ice-radio--faux,
+        &:checked ~ .ice-radio--faux,
+        &:checked + .ice-radio__label .ice-radio--faux {
+          border-color: $ice-radio-focused-border-color;
+        }
+      }
+    }
+  }
+}
+
+//repeated code
+.ice-form-element .ice-radio .ice-input + .ice-radio--faux,
+.ice-form-element .ice-radio .ice-input ~ .ice-radio--faux,
+.ice-form-element .ice-radio .ice-input + .ice-radio__label .ice-radio--faux {
+  margin-right: $ice-radio-label-spacing;
+}

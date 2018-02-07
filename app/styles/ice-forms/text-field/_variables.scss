@@ -1,0 +1,41 @@
+// Core Input Variables  
+// ---
+
+// Text
+$ice-text-field-cursor-base:                   text !default;
+
+
+// Layout
+$ice-text-field-height-base:                   $spacing-default * 4 !default;
+$ice-text-field-height-sm:                     $spacing-default * 3 !default;
+
+$ice-text-field-padding-horizontal-base:       $spacing-default !default;
+$ice-text-field-padding-vertical-base:         $spacing-default - 1px !default;
+$ice-text-field-padding-vertical-sm:           $spacing-default/2 - 1px !default;
+
+$ice-text-field-border:                        $border-input solid !default;
+$ice-text-field-border-width:                  $global-border-size !default;
+$ice-text-field-border-radius:                 $border-radius-none !default;
+
+
+// Label
+$ice-text-field-label-font-size:               $font-size-base !default;
+$ice-text-field-label-line-height:             $line-height-large !default;
+$ice-text-field-label-color-base:              $text-dark !default;                  
+$ice-text-field-label-width:                   200px !default; // design decision
+
+
+// State
+
+// Disabled
+$ice-text-field-disabled-cursor:               $ice-input-disabled-cursor !default;
+$ice-text-field-disabled-color:                $ice-input-disabled-color !default;
+
+// Read-only
+$ice-text-field-readonly-cursor:               $ice-input-readonly-cursor !default;
+
+// Error
+$ice-text-field-error-color:                   $ice-input-error-color !default;
+
+// Warning
+$ice-text-field-warning-color:                 $ice-input-warning-color !default;

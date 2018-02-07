@@ -1,0 +1,19 @@
+@mixin checked-sign($height, $width, $color) {
+  &:after {
+    @include check-sign($height, $width);
+
+    transform: translate3d(-50%, -50%, 0) rotate(-60deg);
+    border-bottom: 2px solid $color;
+    border-left: 2px solid $color;
+  }
+}
+
+@mixin indeterminate-sign($height, $width, $color) {
+  &:after {
+    @include check-sign($height, $width);
+
+    background: $color;
+    border: 0;
+    transform: translate3d(-50%, -50%, 0);
+  }
+}

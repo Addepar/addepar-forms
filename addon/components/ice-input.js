@@ -1,12 +1,16 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import computed from '@ember/object/computed';
 
-const { computed, guidFor, Component, TextField } = Ember;
+export default Component.extend({
+  tagName: 'input',
+  attributeBindings: ['value', 'placeholder', 'disabled', 'readonly'],
+  classNameBindings: ['inputClass', 'isError', 'isWarning', 'className'],
+  className: 'ice-input',
 
-export default TextField.extend({
-  classNameBindings: ['inputClass', 'error:is-error', 'warning:is-warning', 'className'],
-  className: '',
-  inputSize: '',
-  error: false,
+  placeholder: null,
+  value: null,
+  disabled: null,
+  readonly: null,
 
   /**
    * If true, this component will auto focus itself after insertion into the dom
@@ -14,17 +18,10 @@ export default TextField.extend({
   */
   shouldFocus: false,
 
-  warning: false,
-  inputClass: computed('inputSize', function() {
-    let cls = 'ice-input';
-    const size = this.get('inputSize');
-
-    if (size === 'small') {
-      cls = `${cls}-sm`;
-    }
-
-    return cls;
-  }),
+  isWarning: false,
+  isError: false,
+  inputClass: null,
+  inputSize: 'medium',
 
   didInsertElement() {
     this._super(...arguments);
@@ -60,5 +57,5 @@ export default TextField.extend({
 
   keyUp(e) {
     this.sendAction('onKeyUp', e);
-  },
+  }
 });

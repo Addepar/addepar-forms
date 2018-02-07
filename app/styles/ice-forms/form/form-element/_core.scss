@@ -1,0 +1,26 @@
+.ice-form-element {
+  display: flex;
+  position: relative;
+  margin-bottom: $ice-form-element-spacing-base;
+
+  .ice-checkbox {
+    margin-bottom: $ice-form-element-spacing-base;
+  }
+}
+
+.ice-form-element__control {
+  display: flex;
+  // by default, horizontal layout
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.ice-form-element__legend {
+  @include caption(
+    $ice-form-element-legend-font-size-base,
+    $ice-form-element-legend-color-base,
+    $ice-form-element-legend-line-height-base,
+    $ice-form-element-legend-width-base
+  );
+}
+

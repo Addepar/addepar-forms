@@ -1,0 +1,16 @@
+// Core Form Element Variables  
+// ---
+
+
+// Layout
+$ice-form-element-spacing-base:                    $spacing-default !default;
+$ice-form-element-spacing-small:                   $ice-form-element-spacing-base / 2 !default;
+
+$ice-form-element-cursor-base:                     pointer !default;
+
+
+// Label
+$ice-form-element-legend-color-base:                $text-dark !default;
+$ice-form-element-legend-font-size-base:            $font-size-base !default;
+$ice-form-element-legend-line-height-base:          $line-height-large !default;
+$ice-form-element-legend-width-base:                200px !default;

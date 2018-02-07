@@ -1,0 +1,131 @@
+@mixin form-element-state($bg-color, $border-color, $text-color, $cursor) {
+  background-color: $bg-color;
+  border-color: $border-color;
+  color: $text-color;
+  cursor: $cursor;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin hidden-input() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+@mixin input-faux($faux-size, $border) {
+  @include square($faux-size);
+  @include default();
+
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  border: $border;
+  //transition: border $duration-quickly linear, background-color $duration-quickly linear;
+}
+
+@mixin check-sign($height, $width) {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: $height;
+  width: $width;
+}
+
+@mixin caption($font-size, $color, $line-height, $width) {
+  display: inline-block;
+  font-size: $font-size;
+  color: $color;
+  line-height: $line-height;
+  width: $width; 
+}
+
+// Form element status
+// Need to update the params
+
+// when default
+@mixin default() {
+  @include form-element-state(
+    $ice-input-default-bg-color, 
+    $ice-input-default-border-color, 
+    $ice-input-default-color, 
+    $ice-input-default-cursor
+  ); 
+}
+
+
+// when :focus or :active
+@mixin active() {
+  @include form-element-state(
+    $ice-input-focused-bg-color, 
+    $ice-input-focused-border-color, 
+    $ice-input-default-color, 
+    $ice-input-focused-cursor
+  );
+
+  outline: 0;
+}
+
+
+// when :hover
+@mixin hover() {
+  @include form-element-state(
+    $ice-input-hover-bg-color, 
+    $ice-input-hover-border-color, 
+    $ice-input-default-color, 
+    $ice-input-hover-cursor
+  ); 
+}
+
+
+// when :disabled
+@mixin disabled() {
+  @include form-element-state(
+    $ice-input-disabled-bg-color, 
+    $ice-input-disabled-border-color, 
+    $ice-input-disabled-color, 
+    $ice-input-disabled-cursor
+  );
+
+  @include placeholder($ice-input-disabled-placeholder-color); 
+}
+
+
+// when :read-only
+@mixin readonly() {
+  @include form-element-state(
+    $ice-input-readonly-bg-color, 
+    $ice-input-readonly-border-color, 
+    $ice-input-readonly-color, 
+    $ice-input-readonly-cursor
+  ); 
+}
+
+
+// when in error
+@mixin error() {
+  @include form-element-state(
+    $ice-input-error-bg-color, 
+    $ice-input-error-border-color, 
+    $ice-input-default-color, 
+    $ice-input-error-cursor
+  ); 
+}
+
+
+// when in warning
+@mixin warning() {
+  @include form-element-state(
+    $ice-input-warning-bg-color, 
+    $ice-input-warning-border-color, 
+    $ice-input-default-color, 
+    $ice-input-warning-cursor
+  );
+}

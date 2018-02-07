@@ -1,0 +1,39 @@
+// Core Radio Element Variables  
+// ---
+
+
+// Layout
+$ice-radio-cursor-base:                    pointer !default;
+
+
+// Label
+$ice-radio-label-spacing:                 $spacing-default !default;
+
+
+// Radio Faux
+$ice-radio-faux-size:                     $spacing-double !default;
+
+$ice-radio-border:                        $border-input solid !default;
+$ice-radio-border-width:                  $global-border-size !default;
+$ice-radio-border-radius:                 $border-radius-circle !default;
+
+// Check Sign
+$ice-radio-check-sign-size:               $spacing-default !default;
+$ice-radio-check-sign-color:              $text-dark !default;
+
+// Normal State
+$ice-radio-normal-bg-color:               $background-white !default;
+$ice-radio-normal-border:                 $border-input solid !default;
+$ice-radio-normal-border-width:           $global-border-size !default;
+$ice-radio-normal-border-radius:          $border-radius-none !default;
+
+// Hover State
+$ice-radio-hover-color:                   $brand-blue-gray !default;
+
+// Focused State
+$ice-radio-focused-border-color:          $border-dark !default;
+
+// Disabled State
+$ice-radio-disabled-bg-color:             $ice-input-disabled-bg-color !default;
+$ice-radio-disabled-color:                $ice-input-disabled-color !default;
+$ice-radio-disabled-cursor:               $ice-input-disabled-cursor !default;

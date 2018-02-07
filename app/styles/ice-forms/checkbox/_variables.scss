@@ -1,0 +1,45 @@
+// Core Checkbox Element Variables  
+// ---
+
+
+// Layout
+$ice-checkbox-cursor-base:                    pointer !default;
+
+
+// Label
+$ice-checkbox-label-spacing:                 $spacing-default !default;
+
+
+// Checkbox Faux
+$ice-checkbox-faux-size:                     $spacing-double !default;
+
+$ice-checkbox-border:                        $border-input solid !default;
+$ice-checkbox-border-width:                  $global-border-size !default;
+$ice-checkbox-border-radius:                 $border-radius-none !default;
+
+// Check Sign
+$ice-checkbox-check-sign-height:             $spacing-small !default;
+$ice-checkbox-check-sign-width:              $spacing-default !default;
+$ice-checkbox-check-sign-color:              $text-dark !default;
+
+// Indeterminate Sign
+$ice-checkbox-indeterminate-height:          2px !default;
+$ice-checkbox-indeterminate-width:           $spacing-default !default;
+$ice-checkbox-indeterminate-color:           $text-dark !default;
+
+// Normal State
+$ice-checkbox-normal-bg-color:               $background-white !default;
+$ice-checkbox-normal-border:                 $border-input solid !default;
+$ice-checkbox-normal-border-width:           $global-border-size !default;
+$ice-checkbox-normal-border-radius:          $border-radius-none !default;
+
+// Hover State
+$ice-checkbox-hover-color:                   $brand-blue-gray !default;
+
+// Focused State
+$ice-checkbox-focused-border-color:          $border-dark !default;
+
+// Disabled State
+$ice-checkbox-disabled-bg-color:             $ice-input-disabled-bg-color !default;
+$ice-checkbox-disabled-color:                $ice-input-disabled-color !default;
+$ice-checkbox-disabled-cursor:               $ice-input-disabled-cursor !default;

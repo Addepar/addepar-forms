@@ -1,0 +1,154 @@
+.ice-checkbox {
+  display: inline-block;
+
+  &:hover {
+    .ice-input {
+      &:checked + .ice-checkbox--faux,
+      &:checked ~ .ice-checkbox--faux,
+      &:checked + .ice-checkbox__label .ice-checkbox--faux {
+        @include checked-sign(
+          $ice-checkbox-check-sign-height, 
+          $ice-checkbox-check-sign-width, 
+          $ice-checkbox-hover-color
+        );
+      }
+
+      &:indeterminate + .ice-checkbox--faux,
+      &:indeterminate ~ .ice-checkbox--faux,
+      &:indeterminate + .ice-checkbox__label .ice-checkbox--faux {
+        @include indeterminate-sign(
+          $ice-checkbox-indeterminate-height, 
+          $ice-checkbox-indeterminate-width, 
+          $ice-checkbox-hover-color
+        );
+      }
+    }
+
+    .ice-checkbox--faux {
+      @include hover();
+    }
+  }
+
+  .ice-checkbox--faux {
+    $border: $ice-checkbox-border-width $ice-checkbox-border;
+    @include input-faux($ice-checkbox-faux-size, $border);
+  }
+
+  .ice-form-element__label {
+    height: $ice-checkbox-faux-size;
+    margin-left: $ice-checkbox-label-spacing;
+  }
+
+  .ice-input {
+    @include hidden-input();
+
+    // States
+    // 1. normal/unchecked
+    //    1. hover;
+    //    2. focus/active;
+    //    3. diabled;
+    // 2. checked
+    //    1. hover;
+    //    2. focus/active;
+    //    3. disabled;
+    // 3. indeterminate
+    //    1. hover;
+    //    2. focus/active;
+    //    3. disabled;
+
+    &:checked + .ice-checkbox--faux,
+    &:checked ~ .ice-checkbox--faux,
+    &:checked + .ice-checkbox__label .ice-checkbox--faux {
+      @include checked-sign(
+        $ice-checkbox-check-sign-height, 
+        $ice-checkbox-check-sign-width, 
+        $ice-checkbox-check-sign-color
+      );
+    }
+
+    &:focus,
+    &:active,
+    &.is-active {
+      + .ice-checkbox--faux,
+      ~ .ice-checkbox--faux,
+      + .ice-checkbox__label .ice-checkbox--faux {
+        content: '';
+        border-color: $ice-checkbox-focused-border-color;
+      }
+
+      &:checked > .ice-checkbox--faux,
+      &:checked ~ .ice-checkbox--faux,
+      &:checked + .ice-checkbox__label .ice-checkbox--faux {
+        border-color: $ice-checkbox-focused-border-color;
+      }
+    }
+
+    &:indeterminate + .ice-checkbox--faux,
+    &:indeterminate ~ .ice-checkbox--faux,
+    &:indeterminate + .ice-checkbox__label .ice-checkbox--faux {
+      @include indeterminate-sign(
+        $ice-checkbox-indeterminate-height, 
+        $ice-checkbox-indeterminate-width, 
+        $ice-checkbox-indeterminate-color
+      );
+    }
+
+    &:disabled {
+      + .ice-checkbox__label .ice-form-element__label {
+        cursor: $ice-checkbox-disabled-cursor;
+        color: $ice-checkbox-disabled-color;
+      }
+
+      + .ice-checkbox--faux,
+      ~ .ice-checkbox--faux,
+      + .ice-checkbox__label .ice-checkbox--faux {
+        @include disabled();
+      }
+  
+      &:checked + .ice-checkbox--faux,
+      &:checked ~ .ice-checkbox--faux,
+      &:checked + .ice-checkbox__label .ice-checkbox--faux {
+        @include checked-sign(
+          $ice-checkbox-check-sign-height, 
+          $ice-checkbox-check-sign-width, 
+          $ice-checkbox-disabled-color
+        );
+      }
+  
+      &:focus,
+      &:active,
+      &.is-active {
+        + .ice-checkbox--faux,
+        ~ .ice-checkbox--faux,
+        + .ice-checkbox__label .ice-checkbox--faux {
+          content: '';
+          border-color: $ice-checkbox-focused-border-color;
+        }
+  
+        &:checked > .ice-checkbox--faux,
+        &:checked ~ .ice-checkbox--faux,
+        &:checked + .ice-checkbox__label .ice-checkbox--faux {
+          border-color: $ice-checkbox-focused-border-color;
+        }
+      }
+  
+      &:indeterminate + .ice-checkbox--faux,
+      &:indeterminate ~ .ice-checkbox--faux,
+      &:indeterminate + .ice-checkbox__label .ice-checkbox--faux {
+        @include indeterminate-sign(
+          $ice-checkbox-indeterminate-height, 
+          $ice-checkbox-indeterminate-width, 
+          $ice-checkbox-disabled-color
+        );
+      }
+    }
+  }
+}
+
+
+// repeated code
+.ice-form-element .ice-checkbox .ice-input + .ice-checkbox--faux,
+.ice-form-element .ice-checkbox .ice-input ~ .ice-checkbox--faux,
+.ice-form-element .ice-checkbox .ice-input + .ice-checkbox__label .ice-checkbox--faux {
+  margin-right: $ice-checkbox-label-spacing;
+}

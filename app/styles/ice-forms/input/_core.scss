@@ -4,11 +4,8 @@
   
   position: relative;
   display: inline-block;
-  width: 100%;
   font-size: $ice-input-font-size-base;
   line-height: $ice-input-line-height-base;
-  border: $ice-input-border-width $ice-input-border;
-  border-radius: $ice-input-border-radius;
   transition: all $ice-input-transition-speed;
 
   @include default();

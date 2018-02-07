@@ -9,6 +9,7 @@ $demo-container-width: 400px;
 .demo-header,
 .title {
   text-align: center;
+  margin-bottom: 8px;
 }
 
 .scroll-container {
@@ -42,10 +43,6 @@ $demo-container-width: 400px;
   flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
-}
-
-.demo-header {
-  margin-bottom: 0;
 }
 
 .demo-item {

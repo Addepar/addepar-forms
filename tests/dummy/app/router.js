@@ -7,7 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('input');
+  this.route('text-field');
+  this.route('checkbox');
+  this.route('radio');
+  this.route('form');
 });
 
 export default Router;

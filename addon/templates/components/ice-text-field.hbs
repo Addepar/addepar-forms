@@ -1,0 +1,20 @@
+<span class="ice-text-field">
+  {{ice-input
+    placeholder=placeholder
+    value=value
+    readonly=readonly
+    disabled=disabled
+    shouldFocus=shouldFocus
+    isError=isError
+    isWarning=isWarning
+    id=inputId
+  }}
+  {{#if label}}
+    <label 
+      class="ice-text-field__label"
+      for={{inputId}}
+    >
+      {{label}}
+    </label>
+  {{/if}}
+</span>

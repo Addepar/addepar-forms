@@ -1,0 +1,68 @@
+.ice-text-field {
+  display: flex;
+  width: 100%;
+
+  .ice-input {
+    border: $ice-text-field-border-width $ice-text-field-border;
+    border-radius: $ice-text-field-border-radius;
+    padding: $ice-text-field-padding-vertical-base $ice-text-field-padding-horizontal-base;
+    height: $ice-text-field-height-base;
+    cursor: $ice-text-field-cursor-base;
+
+    order: 2;
+    flex-grow: 1;
+
+    // different states
+    &:hover {
+      @include hover();
+    }
+
+    &:focus,
+    &:active,
+    &.is-active {
+      @include active();
+    }
+
+    &:disabled,
+    &.is-disabled {
+      @include disabled();
+      
+      + .ice-text-field__label {
+        color: $ice-text-field-disabled-color;
+      }
+    }
+
+    &:read-only {
+      @include readonly();
+    }
+
+    &.is-error {
+      @include error();
+
+      + .ice-text-field__label {
+        color: $ice-text-field-error-color;
+      }
+    }
+
+    &.is-warning {
+      @include warning();
+
+      + .ice-text-field__label {
+        color: $ice-text-field-warning-color;
+      }
+    }
+  }
+}
+
+// could be label and legend sharing code
+.ice-text-field__label {
+  @include caption(
+    $ice-text-field-label-font-size,
+    $ice-text-field-label-color-base,
+    $ice-text-field-label-line-height,
+    $ice-text-field-label-width
+  );
+
+  align-self: center;
+  order: 1;
+}
