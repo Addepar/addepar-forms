@@ -1,48 +1,93 @@
-<h3 class="title">Input</h3>
+<h3 class="title">Checkbox</h3>
 
 <div class="demo-container">
   <h4 class="demo-header">ICE Checkbox</h4>
-  <p class="demo-header">Types</p>
-  <div class="demo-item">
-    {{ice-checkbox}}
-  </div>
-  <div class="demo-item">
-    {{ice-checkbox label="Chekcbox Label"}}
-  </div>
   <div class="demo-item">
     {{ice-checkbox 
-      checked=true
-      label="Chekcbox-checked"
-    }}
-  </div>
-  <div class="demo-item">
-    {{ice-checkbox
-      indeterminate=true
-      label="Chekcbox-indeterminate"
-    }}
-  </div>
-  <p class="demo-header">Disabled State</p>
-  <div class="demo-item">
-    {{ice-checkbox disabled=true}}
-  </div>
-  <div class="demo-item">
-    {{ice-checkbox 
-      label="Chekcbox Label" 
-      disabled=true
+      label="Checkbox Label"
+      helpText="the display value"
+      isInline=true
     }}
   </div>
   <div class="demo-item">
     {{ice-checkbox 
-      checked=true
-      label="Chekcbox-checked"
-      disabled=true
+      label="Checkbox Label"
+      helpText="Nemo enim ipsam voluptatem quia voluptas sit aspernatur au Nemo enim ipsam voluptatem quia voluptas sit aspernatur au Nemo enim ipsam voluptatem quia voluptas sit aspernatur au"
+      isInline=true
     }}
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
   <div class="demo-item">
-    {{ice-checkbox
-      indeterminate=true
-      label="Chekcbox-indeterminate"
-      disabled=true
+    {{#ice-form-element
+      legend="Form Group Label"
     }}
+      {{ice-checkbox 
+        label="Checkbox Label"
+        helpText="Automatically append disclosure text to the bottom of tables, charts, or sections in reports."
+      }}
+    {{/ice-form-element}}
+  </div>
+  <div class="demo-item">
+    {{#ice-form-element
+      legend="Form Group Label"
+      helpText="Nemo enim ipsam voluptatem quia voluptas sit aspernatur au Nemo enim ipsam voluptatem quia voluptas sit aspernatur au Nemo enim ipsam voluptatem quia voluptas sit aspernatur au"
+    }}
+      {{ice-checkbox label="Checkbox Label"}}
+      {{ice-checkbox 
+        checked=true
+        label="Checkbox-checked"
+      }}
+      {{ice-checkbox
+        indeterminate=true
+        label="Chekcbox-indeterminate"
+      }}
+      {{ice-checkbox 
+        label="Checkbox Label" 
+        disabled=true
+      }}
+      {{ice-checkbox 
+        checked=true
+        label="Checkbox-checked"
+        disabled=true
+      }}
+      {{ice-checkbox
+        indeterminate=true
+        label="Checkbox-indeterminate"
+        disabled=true
+      }}
+    {{/ice-form-element}}
+  </div>
+  <div class="demo-item">
+    {{#ice-form-element
+      legend="Form Group Label"
+      introText="Nemo enim ipsam voluptatem quia voluptas sit aspernatur auNemo enim ipsam voluptatem quia voluptas sit aspernatur auNemo enim ipsam voluptatem quia voluptas sit aspernatur au"
+    }}
+      {{ice-checkbox label="Chekcbox Label"}}
+      {{ice-checkbox 
+        checked=true
+        label="Chekcbox-checked"
+      }}
+      {{ice-checkbox
+        indeterminate=true
+        label="Chekcbox-indeterminate"
+      }}
+      {{ice-checkbox 
+        label="Chekcbox Label" 
+        disabled=true
+      }}
+      {{ice-checkbox 
+        checked=true
+        label="Chekcbox-checked"
+        disabled=true
+      }}
+      {{ice-checkbox
+        indeterminate=true
+        label="Chekcbox-indeterminate"
+        disabled=true
+      }}
+    {{/ice-form-element}}
   </div>
 </div>

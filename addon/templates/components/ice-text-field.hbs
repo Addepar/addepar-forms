@@ -10,11 +10,13 @@
     id=inputId
   }}
   {{#if label}}
-    <label 
-      class="ice-text-field__label"
-      for={{inputId}}
-    >
+    <label class="ice-text-field__label" for={{inputId}}>
       {{label}}
     </label>
+  {{/if}}
+  {{#if helpText}}
+    <p class="ice-text-field__helpText">
+      {{helpText}}
+    </p>
   {{/if}}
 </span>

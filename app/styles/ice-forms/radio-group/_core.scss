@@ -1,0 +1,4 @@
+.ice-radio-group {
+  @extend %form-control-layout-vertical;
+  @include reset();
+}

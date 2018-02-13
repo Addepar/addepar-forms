@@ -1,5 +1,6 @@
 .ice-text-field {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
 
   .ice-input {
@@ -10,7 +11,7 @@
     cursor: $ice-text-field-cursor-base;
 
     order: 2;
-    flex-grow: 1;
+    flex: 1;
 
     // different states
     &:hover {
@@ -42,6 +43,10 @@
       + .ice-text-field__label {
         color: $ice-text-field-error-color;
       }
+
+      ~ .ice-text-field__helpText {
+        color: $ice-text-field-error-color;
+      }
     }
 
     &.is-warning {
@@ -50,7 +55,16 @@
       + .ice-text-field__label {
         color: $ice-text-field-warning-color;
       }
+
+      ~ .ice-text-field__helpText {
+        color: $ice-text-field-warning-color;
+      }
     }
+  }
+
+  .ice-text-field__helpText,
+  & + .ice-form-element__helpText {
+    margin-left: $ice-form-element-legend-width-base + $spacing-double;
   }
 }
 
@@ -58,6 +72,7 @@
 .ice-text-field__label {
   @include caption(
     $ice-text-field-label-font-size,
+    $ice-text-field-label-font-weight,
     $ice-text-field-label-color-base,
     $ice-text-field-label-line-height,
     $ice-text-field-label-width
@@ -65,4 +80,14 @@
 
   align-self: center;
   order: 1;
+}
+
+.ice-text-field__helpText {
+  @include helpText(
+    $ice-form-element-help-text-font-size,
+    $ice-form-element-help-text-line-height,
+    $ice-form-element-help-text-color-base
+  );
+
+  order: 3;
 }

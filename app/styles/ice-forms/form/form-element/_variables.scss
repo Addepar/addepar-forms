@@ -12,5 +12,12 @@ $ice-form-element-cursor-base:                     pointer !default;
 // Label
 $ice-form-element-legend-color-base:                $text-dark !default;
 $ice-form-element-legend-font-size-base:            $font-size-base !default;
+$ice-form-element-legend-font-weight-base:          $font-medium !default;
 $ice-form-element-legend-line-height-base:          $line-height-large !default;
 $ice-form-element-legend-width-base:                200px !default;
+
+
+// Help Text
+$ice-form-element-help-text-font-size:              $font-size-base !default;
+$ice-form-element-help-text-color-base:             $text-light !default;
+$ice-form-element-help-text-line-height:            $line-height-large !default;

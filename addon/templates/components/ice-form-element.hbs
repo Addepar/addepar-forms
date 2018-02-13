@@ -5,4 +5,13 @@
 {{/if}}
 <div class="ice-form-element__control">
   {{yield}}
+  {{#if helpText}}
+    <p class="ice-form-element__helpText">
+      {{helpText}}
+    </p>
+  {{else if introText}}
+    <p class="ice-form-element__helpText is-introText">
+      {{introText}}
+    </p>
+  {{/if}}
 </div>

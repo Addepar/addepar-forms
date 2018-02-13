@@ -2,16 +2,121 @@
 // ---
 
 
+//think we could have a global variable for it
+$ice-form-transition-speed:                         0.1s !default;
+
+
+// Text
+$ice-form-font-size-base:                           $font-size-base !default;
+$ice-form-line-height-base:                         $line-height-large !default;
+$ice-form-color-base:                               $text-dark !default;
+$ice-form-cursor-base:                              text !default;
+
+
 // Layout
-$ice-form-content-padding:              $spacing-triple !default;
+$ice-form-content-padding:                          $spacing-triple !default;
 
 
 // Form Heading
-$ice-form-heading-color:                $text-dark !default;
-$ice-form-heading-font-size:            $font-size-large !default;
-$ice-form-heading-line-height:          $line-height-base !default;
-$ice-form-heading-spacing-bottom:       $spacing-small / 2 !default;
+$ice-form-heading-color:                            $text-dark !default;
+$ice-form-heading-font-size:                        $font-size-medium !default;
+$ice-form-heading-line-height:                      $line-height-base !default;
+$ice-form-heading-font-weight:                      $font-medium !default;
+$ice-form-heading-spacing-bottom:                   $spacing-small / 2 !default;
 
 // Form Heading Split Line
-$ice-form-heading-split-line-height:    $global-border-size !default;
-$ice-form-heading-split-line-color:     $border-input !default;
+$ice-form-heading-split-line-height:                $global-border-size !default;
+$ice-form-heading-split-line-color:                 $border-input !default;
+
+
+// Form Selection
+
+// Layout
+$ice-form-selection-cursor-base:                    pointer !default;
+
+
+// Help Text
+$ice-form-selection-help-text-font-size:            $font-size-base !default;
+$ice-form-selection-help-text-color:                $text-light !default;
+$ice-form-selection-help-text-line-height:          $line-height-large !default;
+
+
+// Label
+$ice-form-selection-label-font-size:                $font-size-base !default;
+$ice-form-selection-label-line-height:              $line-height-large !default;
+$ice-form-selection-label-inline-width:             200px !default;
+$ice-form-selection-label-inline-spacing:           $spacing-double !default;
+
+
+// Form Selection Faux
+$ice-form-selection-faux-size:                      $spacing-double !default;
+$ice-form-selection-faux-spacing:                   $spacing-default !default;
+$ice-form-selection-border:                         $border-input solid !default;
+$ice-form-selection-border-width:                   $global-border-size !default;
+$ice-form-selection-border-radius:                  $border-radius-circle !default;
+
+
+// Normal State
+$ice-form-selection-normal-bg-color:                $background-white !default;
+$ice-form-selection-normal-border:                  $border-input solid !default;
+$ice-form-selection-normal-border-width:            $global-border-size !default;
+$ice-form-selection-normal-border-radius:           $border-radius-none !default;
+
+// Hover State
+$ice-form-selection-hover-color:                    $brand-blue-gray !default;
+
+// Focused State
+$ice-form-selection-focused-border-color:           $border-dark !default;
+
+
+// Form States  
+// ---
+
+// Default state
+$ice-form-default-color:                            $ice-form-color-base !default;
+$ice-form-default-border-color:                     $border-input !default;
+$ice-form-default-bg-color:                         $background-white !default;
+$ice-form-default-cursor:                           $ice-form-cursor-base !default;
+
+
+// Hover state
+$ice-form-hover-color:                              $ice-form-color-base !default;
+$ice-form-hover-border-color:                       $border-blue !default;
+$ice-form-hover-bg-color:                           $ice-form-default-bg-color !default;
+$ice-form-hover-cursor:                             $ice-form-cursor-base !default;
+
+
+// Focused state
+$ice-form-focused-color:                            $ice-form-color-base !default;
+$ice-form-focused-border-color:                     $border-blue !default;
+$ice-form-focused-bg-color:                         $ice-form-default-bg-color !default;
+$ice-form-focused-cursor:                           $ice-form-cursor-base !default;
+
+
+// Disabled state
+$ice-form-disabled-color:                $text-light !default;
+$ice-form-disabled-bg-color:             $background-light !default;
+$ice-form-disabled-border-color:         $border-input !default;
+$ice-form-disabled-placeholder-color:    $ice-form-disabled-bg-color !default;
+$ice-form-disabled-cursor:               not-allowed !default;
+
+
+// Read Only state
+$ice-form-readonly-color:                $text-dark !default;
+$ice-form-readonly-border-color:         transparent !default;
+$ice-form-readonly-bg-color:             transparent !default;
+$ice-form-readonly-cursor:               default !default;
+
+
+// Error state
+$ice-form-error-color:                   $text-red !default;
+$ice-form-error-border-color:            $border-red !default;
+$ice-form-error-bg-color:                $ice-form-default-bg-color !default;
+$ice-form-error-cursor:                  $ice-form-cursor-base !default;
+
+
+// Warning state
+$ice-form-warning-color:                 $text-yellow !default;
+$ice-form-warning-border-color:          $border-yellow !default;
+$ice-form-warning-bg-color:              $ice-form-default-bg-color !default;
+$ice-form-warning-cursor:                $ice-form-cursor-base !default;

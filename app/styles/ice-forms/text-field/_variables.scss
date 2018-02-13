@@ -20,9 +20,16 @@ $ice-text-field-border-radius:                 $border-radius-none !default;
 
 // Label
 $ice-text-field-label-font-size:               $font-size-base !default;
+$ice-text-field-label-font-weight:             $font-medium !default;
 $ice-text-field-label-line-height:             $line-height-large !default;
 $ice-text-field-label-color-base:              $text-dark !default;                  
 $ice-text-field-label-width:                   200px !default; // design decision
+
+
+// Help Text
+$ice-text-field-help-text-font-size:           $font-size-base !default;
+$ice-text-field-help-text-color:               $text-light !default;
+$ice-text-field-help-text-line-height:         $line-height-large !default;
 
 
 // State

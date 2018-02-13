@@ -1,1 +1,13 @@
-{{yield}}
+{{#if options}}
+  {{#each options as |radio|}}
+    {{ice-radio
+      value=radio.value
+      name=name
+      label=radio.label
+      disabled=radio.disabled
+      helpText=radio.helpText
+    }}
+  {{/each}}
+{{else}}
+  {{yield name}}
+{{/if}}

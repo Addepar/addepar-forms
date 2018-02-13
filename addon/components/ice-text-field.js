@@ -6,6 +6,7 @@ export default Component.extend({
   tagName: '',
   layout,
   inputId: null,
+  helpText: null,
 
   init() {
     this._super(...arguments);

@@ -1,35 +1,12 @@
-<h3 class="title">Input</h3>
+<h3 class="title">Radio</h3>
 
 <div class="demo-container">
-  <h4 class="demo-header">ICE Radio</h4>
-  <p class="demo-header">Types</p>
   <div class="demo-item">
-    {{ice-radio}}
-  </div>
-  <div class="demo-item">
-    {{ice-radio label="Radio Label"}}
-  </div>
-  <div class="demo-item">
-    {{ice-radio 
-      checked=true
-      label="Radio-checked"
+    {{#ice-form-element
+      legend="Portal Date Display"
+      introText="Displayed when an annualized figure is calculated for a position held for less than one year"
     }}
-  </div>
-  <p class="demo-header">Disabled State</p>
-  <div class="demo-item">
-    {{ice-radio disabled=true}}
-  </div>
-  <div class="demo-item">
-    {{ice-radio 
-      label="Radio Label" 
-      disabled=true
-    }}
-  </div>
-  <div class="demo-item">
-    {{ice-radio 
-      checked=true
-      label="Radio-checked"
-      disabled=true
-    }}
+      {{ice-radio-group options=options name="radio-group 2"}}
+    {{/ice-form-element}}
   </div>
 </div>

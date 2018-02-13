@@ -7,6 +7,8 @@ export default Component.extend({
   classNames: ['ice-form-element'],
   legend: null,
   inputId: null,
+  helpText: null,
+  introText: null,
 
   init() {
     this._super(...arguments);

@@ -1,15 +1,18 @@
-<span class="ice-radio">
-  {{simple-radio 
-    value=value
-    checked=checked
-    disabled=disabled
-    id=inputId
-    name=name
-  }}
-  <label class="ice-radio__label" for={{inputId}}>
-    <span class="ice-radio--faux"></span>
-    {{#if label}}
-      <span class="ice-form-element__label">{{label}}</span>
-    {{/if}}
-  </label>
-</span>
+{{simple-radio 
+  value=value
+  checked=checked
+  disabled=disabled
+  id=inputId
+  name=name
+}}
+<label class="ice-radio__label" for={{inputId}}>
+  <span class="ice-radio--faux"></span>
+  {{#if label}}
+    <span class="ice-form-element__label">{{label}}</span>
+  {{/if}}
+</label>
+{{#if helpText}}
+  <p class="ice-radio__helpText">
+    {{helpText}}
+  </p>
+{{/if}}

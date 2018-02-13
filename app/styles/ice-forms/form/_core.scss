@@ -2,11 +2,9 @@
 // 2. form control validation
 
 .ice-form {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #000;
-  margin: 0;
-  padding: 0;
+  font-size: $ice-form-font-size-base;
+  line-height: $ice-form-line-height-base;
+  color: $ice-form-color-base;
 }
 
 .ice-form__content {
@@ -15,10 +13,18 @@
 
 .ice-form__heading {
   font-size: $ice-form-heading-font-size;
+  font-weight: $ice-form-heading-font-weight;
   line-height: $ice-form-heading-line-height;
   color: $ice-form-heading-color;
   padding-bottom: $ice-form-heading-spacing-bottom;
   margin: 0;
 
   border-bottom: $ice-form-heading-split-line-height solid $ice-form-heading-split-line-color;
+}
+
+form,
+fieldset,
+legend,
+label {
+  @include reset();
 }

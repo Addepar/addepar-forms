@@ -1,15 +1,18 @@
-<span class="ice-checkbox">
-  {{simple-checkbox 
-    value=value
-    checked=checked
-    disabled=disabled
-    id=inputId
-    indeterminate=indeterminate
-  }}
-  <label class="ice-checkbox__label" for={{inputId}}>
-    <span class="ice-checkbox--faux"></span>
-    {{#if label}}
-      <span class="ice-form-element__label">{{label}}</span>
-    {{/if}}
-  </label>
-</span>
+{{simple-checkbox 
+  value=value
+  checked=checked
+  disabled=disabled
+  id=inputId
+  indeterminate=indeterminate
+}}
+<label class="ice-checkbox__label" for={{inputId}}>
+  <span class="ice-checkbox--faux"></span>
+  {{#if label}}
+    <span class="ice-form-element__label">{{label}}</span>
+  {{/if}}
+</label>
+{{#if helpText}}
+  <p class="ice-checkbox__helpText">
+    {{helpText}}
+  </p>
+{{/if}}

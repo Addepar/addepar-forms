@@ -1,3 +1,20 @@
+@mixin reset() {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin helpText($font-size, $line-height, $color) {
+  display: inline-block;
+  font-size: $font-size;
+  line-height: $line-height;
+  text-align: left;
+  color: $color;
+
+  margin-top: $spacing-small;
+  margin-bottom: 0;
+}
+
 @mixin form-element-state($bg-color, $border-color, $text-color, $cursor) {
   background-color: $bg-color;
   border-color: $border-color;
@@ -11,11 +28,12 @@
 }
 
 @mixin hidden-input() {
-  border: 0;
+  @include reset();
+
   clip: rect(0 0 0 0);
   overflow: hidden;
-  padding: 0;
   position: absolute;
+  height: 0;
 }
 
 @mixin input-faux($faux-size, $border) {
@@ -37,14 +55,160 @@
   left: 50%;
   height: $height;
   width: $width;
+  transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
 }
 
-@mixin caption($font-size, $color, $line-height, $width) {
+@mixin caption($font-size, $font-weight, $color, $line-height, $width) {
   display: inline-block;
   font-size: $font-size;
+  font-weight: $font-weight;
   color: $color;
   line-height: $line-height;
-  width: $width; 
+  flex: 0 0 $width;
+  margin-right: $spacing-double;
+}
+
+@mixin faux-selector($type){
+    > .ice-#{$type}--faux,
+    ~ .ice-#{$type}--faux,
+    + .ice-#{$type}__label .ice-#{$type}--faux {
+      @content;
+    }
+}
+
+@mixin activeFocus-selector() {
+  &:focus,
+  &:active,
+  &.is-active {
+    @content;
+  }
+}
+
+@mixin selection-control($type) {
+  display: flex;
+  flex-direction: column;
+
+  &.is-inline {
+    flex-direction: row;
+
+    .ice-form-element__label {
+      order: -1;
+      width: $ice-form-selection-label-inline-width;
+      margin-right: $ice-form-selection-label-inline-spacing;
+    }
+
+    .ice-#{$type}__helpText {
+      margin-left: 0;
+    }
+  }
+
+  &:hover {
+    .ice-#{$type}--faux {
+      @include hover();
+    }
+  }
+
+  .ice-#{$type}--faux {
+    $border: $ice-form-selection-border-width $ice-form-selection-border;
+
+    @include input-faux($ice-form-selection-faux-size, $border);
+    @if $type == "radio" {
+      border-radius: $border-radius-circle;
+    }
+
+    margin-right: $ice-form-selection-faux-spacing;
+  }
+
+  .ice-#{$type}__label {
+    display: inline-flex;
+  }
+
+  .ice-form-element__label {
+    font-size: $ice-form-selection-label-font-size;
+    line-height: $ice-form-selection-label-line-height;
+    height: $ice-form-selection-faux-size;
+  }
+
+  .ice-input {
+    @include hidden-input();
+
+    // States
+    // 1. normal/unchecked
+    //    1. hover;
+    //    2. focus/active;
+    //    3. diabled;
+    // 2. checked
+    //    1. hover;
+    //    2. focus/active;
+    //    3. disabled;
+
+    &:checked {
+      @include faux-selector($type) {
+        @if $type == "radio" {
+          @include radio(
+            $ice-radio-check-sign-size,
+            $ice-radio-check-sign-size,
+            $ice-radio-check-sign-color
+          );
+        } @else if $type == "checkbox" {
+            @include checked-sign(
+              $ice-checkbox-check-sign-height, 
+              $ice-checkbox-check-sign-width, 
+              $ice-checkbox-check-sign-color
+            );
+        }
+
+        border-color: $ice-form-selection-focused-border-color;
+      }
+    }
+
+    @include activeFocus-selector() {
+      @include faux-selector($type) {
+        content: '';
+        border-color: $ice-form-selection-focused-border-color;
+      }
+
+      &:checked:not(:disabled) {
+        @include faux-selector($type) {
+          border-color: $ice-form-selection-focused-border-color;
+        }
+      }
+    }
+
+    &:disabled {
+      + .ice-#{$type}__label .ice-form-element__label {
+        cursor: $ice-form-disabled-cursor;
+        color: $ice-form-disabled-color;
+      }
+
+      @include faux-selector($type) {
+        @include disabled();
+      }
+
+      &:checked {
+        @include faux-selector($type) {
+          @if $type == "radio" {
+            @include radio(
+              $ice-radio-check-sign-size,
+              $ice-radio-check-sign-size,
+              $ice-radio-disabled-color
+            );
+          }
+        }
+      }
+    }
+  }
+
+  .ice-#{$type}__helpText {
+    @include helpText(
+      $ice-form-selection-help-text-font-size,
+      $ice-form-selection-help-text-line-height,
+      $ice-form-selection-help-text-color
+    );
+
+    height: $ice-form-selection-faux-size;
+    margin-left: $ice-form-selection-faux-size + $ice-form-selection-faux-spacing;
+  }
 }
 
 // Form element status
@@ -53,10 +217,10 @@
 // when default
 @mixin default() {
   @include form-element-state(
-    $ice-input-default-bg-color, 
-    $ice-input-default-border-color, 
-    $ice-input-default-color, 
-    $ice-input-default-cursor
+    $ice-form-default-bg-color, 
+    $ice-form-default-border-color, 
+    $ice-form-default-color, 
+    $ice-form-default-cursor
   ); 
 }
 
@@ -64,10 +228,10 @@
 // when :focus or :active
 @mixin active() {
   @include form-element-state(
-    $ice-input-focused-bg-color, 
-    $ice-input-focused-border-color, 
-    $ice-input-default-color, 
-    $ice-input-focused-cursor
+    $ice-form-focused-bg-color, 
+    $ice-form-focused-border-color, 
+    $ice-form-default-color, 
+    $ice-form-focused-cursor
   );
 
   outline: 0;
@@ -77,10 +241,10 @@
 // when :hover
 @mixin hover() {
   @include form-element-state(
-    $ice-input-hover-bg-color, 
-    $ice-input-hover-border-color, 
-    $ice-input-default-color, 
-    $ice-input-hover-cursor
+    $ice-form-hover-bg-color, 
+    $ice-form-hover-border-color, 
+    $ice-form-default-color, 
+    $ice-form-hover-cursor
   ); 
 }
 
@@ -88,10 +252,10 @@
 // when :disabled
 @mixin disabled() {
   @include form-element-state(
-    $ice-input-disabled-bg-color, 
-    $ice-input-disabled-border-color, 
-    $ice-input-disabled-color, 
-    $ice-input-disabled-cursor
+    $ice-form-disabled-bg-color, 
+    $ice-form-disabled-border-color, 
+    $ice-form-disabled-color, 
+    $ice-form-disabled-cursor
   );
 
   @include placeholder($ice-input-disabled-placeholder-color); 
@@ -101,10 +265,10 @@
 // when :read-only
 @mixin readonly() {
   @include form-element-state(
-    $ice-input-readonly-bg-color, 
-    $ice-input-readonly-border-color, 
-    $ice-input-readonly-color, 
-    $ice-input-readonly-cursor
+    $ice-form-readonly-bg-color, 
+    $ice-form-readonly-border-color, 
+    $ice-form-readonly-color, 
+    $ice-form-readonly-cursor
   ); 
 }
 
@@ -112,10 +276,10 @@
 // when in error
 @mixin error() {
   @include form-element-state(
-    $ice-input-error-bg-color, 
-    $ice-input-error-border-color, 
-    $ice-input-default-color, 
-    $ice-input-error-cursor
+    $ice-form-error-bg-color, 
+    $ice-form-error-border-color, 
+    $ice-form-default-color, 
+    $ice-form-error-cursor
   ); 
 }
 
@@ -123,9 +287,9 @@
 // when in warning
 @mixin warning() {
   @include form-element-state(
-    $ice-input-warning-bg-color, 
-    $ice-input-warning-border-color, 
-    $ice-input-default-color, 
-    $ice-input-warning-cursor
+    $ice-form-warning-bg-color, 
+    $ice-form-warning-border-color, 
+    $ice-form-default-color, 
+    $ice-form-warning-cursor
   );
 }

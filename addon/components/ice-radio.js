@@ -6,7 +6,8 @@ import layout from '../templates/components/ice-radio';
 
 export default Component.extend({
   layout,
-  tagName: '',
+  tagName: 'span',
+  classNames: ['ice-radio'],
   value: null,
   checked: false,
   disabled: false,

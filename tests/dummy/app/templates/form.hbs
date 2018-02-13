@@ -3,20 +3,54 @@
     {{#ice-form-element
       legend="Form Group Label"
     }}
-      {{ice-radio label="Chekcbox Label"}}
+      {{ice-radio label="Radio Label" value=0}}
       {{ice-radio 
         checked=true
-        label="Chekcbox-checked"
+        label="Radio-checked"
+        value=1
       }}
       {{ice-radio 
-        label="Chekcbox Label" 
+        label="Radio Label" 
         disabled=true
+        value=2
       }}
       {{ice-radio 
         checked=true
-        label="Chekcbox-checked"
+        label="Radio-checked"
         disabled=true
+        value=3
       }}
+    {{/ice-form-element}}
+    {{#ice-form-element
+      legend="Radio Group"
+    }}
+      {{#ice-radio-group name="radio-group" as |name|}}
+        {{ice-radio name=name label="Radio Label" value=0}}
+        {{ice-radio 
+          checked=true
+          name=name
+          label="Radio-checked"
+          value=1
+        }}
+        {{ice-radio 
+          label="Radio Label" 
+          name=name
+          disabled=true
+          value=2
+        }}
+        {{ice-radio 
+          checked=true
+          name=name
+          label="Radio-checked"
+          disabled=true
+          value=3
+        }}
+      {{/ice-radio-group}}
+    {{/ice-form-element}}
+    {{#ice-form-element
+      legend="Radio Group (using options) default value 2"
+    }}
+      {{ice-radio-group options=options name="radio-group 2"}}
     {{/ice-form-element}}
     {{#ice-form-element
       legend="Form Group Label"
@@ -52,6 +86,15 @@
         label="Text Field Label"
       }}
     {{/ice-form-element}}
+    {{#ice-form-element
+      helpText="Nemo enim ipsam voluptatem quia voluptas sit aspernatur au"
+    }}
+      {{ice-text-field 
+        value='Input Text'
+        placeholder='Enter Text'
+        label="Text Field Label"
+      }}
+    {{/ice-form-element}}
     {{#ice-form-element}}
       {{ice-text-field 
         placeholder='Enter Text'
@@ -74,11 +117,31 @@
         label="Read Only"
       }}
     {{/ice-form-element}}
+    {{#ice-form-element
+      helpText="This is helper text. Nemo enim ipsam voluptatem quia voluptas sit aspernatur."
+    }}
+      {{ice-text-field 
+        value='Input Text'
+        isError=true
+        label="Error"
+        helpText="This is an inline error message"
+      }}
+    {{/ice-form-element}}
     {{#ice-form-element}}
       {{ice-text-field 
         value='Input Text'
         isError=true
         label="Error"
+      }}
+    {{/ice-form-element}}
+    {{#ice-form-element
+      helpText="This is helper text. Nemo enim ipsam voluptatem quia voluptas sit aspernatur."
+    }}
+      {{ice-text-field 
+        value='Input Text'
+        isWarning=true
+        label="Warning"
+        helpText="This is an inline warning message"
       }}
     {{/ice-form-element}}
     {{#ice-form-element}}

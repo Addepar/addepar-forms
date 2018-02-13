@@ -3,24 +3,42 @@
   position: relative;
   margin-bottom: $ice-form-element-spacing-base;
 
-  .ice-checkbox {
+  .ice-checkbox,
+  .ice-radio {
     margin-bottom: $ice-form-element-spacing-base;
+  }
+
+  span:last-of-type {
+    margin-bottom: 0;
   }
 }
 
 .ice-form-element__control {
-  display: flex;
-  // by default, horizontal layout
-  flex-direction: column;
-  flex-grow: 1;
+  // by default, it should be vertical
+  @extend %form-control-layout-vertical;
 }
 
 .ice-form-element__legend {
   @include caption(
     $ice-form-element-legend-font-size-base,
+    $ice-form-element-legend-font-weight-base,
     $ice-form-element-legend-color-base,
     $ice-form-element-legend-line-height-base,
     $ice-form-element-legend-width-base
   );
 }
 
+.ice-form-element__helpText {
+  @include helpText(
+    $ice-form-element-help-text-font-size,
+    $ice-form-element-help-text-line-height,
+    $ice-form-element-help-text-color-base
+  );
+
+  margin-bottom: $spacing-default;
+
+  &.is-introText {
+    order: -1;
+    margin-top: 0;
+  }
+}

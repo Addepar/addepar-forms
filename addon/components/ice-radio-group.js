@@ -1,6 +1,11 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/ice-radio-group';
 
-export default Ember.Component.extend({
-  layout
+export default Component.extend({
+  layout,
+  tagName: 'fieldset',
+  classNames: ['ice-radio-group'],
+
+  name: null,
+  options: null
 });

@@ -6,13 +6,16 @@ import layout from '../templates/components/ice-checkbox';
 
 export default Component.extend({
   layout,
-  tagName: '',
+  tagName: 'span',
+  classNames: ['ice-checkbox'],
+  classNameBindings: ['isInline'],
   value: null,
   checked: false,
   disabled: false,
   indeterminate: false,
 
   inputId: null,
+  isInline: false,
 
   init() {
     this._super(...arguments);
