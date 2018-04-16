@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@addepar/eslint-config": "^2.1.0",
+    "@addepar/pop-menu": "^0.3.0",
     "@addepar/sass-lint-config": "^1.0.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
