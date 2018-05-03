@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: '@addepar/forms'
+  name: '@addepar/forms',
 };
