@@ -1,1 +1,26 @@
 @import '@addepar/style-toolbox';
+
+html,
+body {
+  height: 100%;
+}
+
+// temp demo CSS to make font awesome icons look like something
+
+.fa {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+.fa-caret-down:before {
+  content: '\2023';
+  font-size: 20px;
+  display: inline-block;
+  transform: rotate(90deg) translateX(2px);
+}
+
+.fa-trash-o:before {
+  content: '\21D0';
+  font-size: 20px;
+}

@@ -1,0 +1,71 @@
+<button class="adde-color-picker-button"
+  {{action "cleanDropdownState"}}
+  value={{selectedColor}}
+  disabled={{disabled}}>
+  {{#if _isEmpty}}
+    &nbsp; + Color
+  {{else}}
+    {{color-picker-cell color=selectedColor data-test-color-cell=true}}
+  {{/if}}
+  <span class="button-caret">
+    <i class="fa fa-caret-down"></i>
+  </span>
+  {{#adde-dropdown
+    placement=placement
+    class=dropdownClass
+    arrowNavigation=false
+    data-test-color-picker-dropdown=true
+    as |close|}}
+    <div class="adde-popover-body">
+      <section>
+        {{#each _colorPaletteAdjusted as |row|}}
+          <div class="adde-color-picker-row">
+            {{#each row as |color|}}
+              {{color-picker-radio-cell
+                color=color
+                selectedColor=selectedColor
+                data-test-radio-cell=true
+              }}
+            {{/each}}
+          </div>
+        {{/each}}
+      </section>
+      <section class="custom-color-row">
+        <button class="button-icon"
+          value={{_customColor}}
+          disabled={{_isCustomColorInvalid}}
+          data-close
+          data-test-custom-color-button>
+          {{color-picker-cell
+            color=_customColor
+            class=(if _isCustomColorInvalid 'is-invalid' 'is-active')
+            data-test-color-cell=true
+          }}
+        </button>
+        {{!-- TODO: ember 1.13 switch to closure action on enter, remove form.
+          enter=(action "closeDropdown" close)
+        --}}
+        <form {{action "closeDropdown" close on="submit"}} data-test-input-form>
+          {{input
+            value=_customColor
+            classNames="adde-text-input"
+            class=(if _isCustomColorInvalid 'is-invalid')
+            placeholder="HEX code"
+            invalid=_isCustomColorInvalid
+            data-test-custom-color-input=true
+          }}
+        </form>
+        {{#if canRemoveColor}}
+          <button class="button-icon"
+            {{action "removeColor" close}}
+            alt="remove color"
+            title="remove color"
+            data-test-remove-color>
+              <i class="fa fa-trash-o fa-lg"></i>
+          </button>
+        {{/if}}
+      </section>
+    </div>
+    {{yield}}
+  {{/adde-dropdown}}
+</button>
