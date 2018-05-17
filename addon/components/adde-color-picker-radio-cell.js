@@ -6,7 +6,7 @@ import { attribute, classNames, tagName } from '@ember-decorators/component';
 
 import { argument } from '@ember-decorators/argument';
 
-import layout from '../templates/components/color-picker-radio-cell';
+import layout from '../templates/components/adde-color-picker-radio-cell';
 
 @tagName('label')
 @classNames('adde-color-picker-radio')

@@ -6,7 +6,7 @@ import { computed } from '@ember-decorators/object';
 import { attribute, className, classNames, tagName } from '@ember-decorators/component';
 import { argument } from '@ember-decorators/argument';
 
-import layout from '../templates/components/color-picker-cell';
+import layout from '../templates/components/adde-color-picker-cell';
 
 @tagName('span')
 @classNames('adde-color-picker-cell')

@@ -6,15 +6,19 @@ import AddeColorPickerRadioCellPage from '@addepar/forms/test-support/pages/adde
 
 const radioCellHelper = AddeColorPickerRadioCellPage.scope('[data-test-radio-cell]');
 
-moduleForComponent('color-picker-radio-cell', 'Integration | Component | color picker radio cell', {
-  integration: true,
-});
+moduleForComponent(
+  'adde-color-picker-radio-cell',
+  'Integration | Component | color picker radio cell',
+  {
+    integration: true,
+  }
+);
 
 test('Cell correctly reflects provided color', async function(assert) {
   assert.expect(2);
 
   this.render(hbs`
-    {{color-picker-radio-cell
+    {{adde-color-picker-radio-cell
       color="#bada55"
       data-test-radio-cell=true}}
   `);
@@ -29,11 +33,11 @@ test('Cells correctly reflect current active color', async function(assert) {
   assert.expect(4);
 
   this.render(hbs`
-    {{color-picker-radio-cell
+    {{adde-color-picker-radio-cell
       color="#c0ffee"
       selectedColor="#bada55"
       data-test-radio-cell=true}}
-    {{color-picker-radio-cell
+    {{adde-color-picker-radio-cell
       color="#bada55"
       selectedColor="#bada55"
       data-test-radio-cell=true}}
@@ -62,7 +66,7 @@ test('Cell correctly reflects empty color', async function(assert) {
   assert.expect(1);
 
   this.render(hbs`
-    {{color-picker-radio-cell
+    {{adde-color-picker-radio-cell
       color=""
       data-test-radio-cell=true}}
   `);
@@ -76,7 +80,7 @@ test('Cell correctly reflects transparent color', async function(assert) {
   assert.expect(1);
 
   this.render(hbs`
-    {{color-picker-radio-cell
+    {{adde-color-picker-radio-cell
       color="transparent"
       data-test-radio-cell=true}}
   `);
