@@ -104,16 +104,12 @@ export default class AddeColorPickerComponent extends Component {
    */
   @computed('selectedColor')
   get _customColor() {
+    // Custom color is initially selectedColor
     return this.get('selectedColor');
   }
   set _customColor(color) {
-    // Auto format the custom input with hex first,
-    // then test whether to update seletedColor.
-    let customColor = this._formatColor(color);
-    if (this._validateColor(customColor)) {
-      this.set('selectedColor', customColor);
-    }
-    return customColor;
+    // Auto format the custom input with hex
+    return this._formatColor(color);
   }
 
   /**
@@ -195,6 +191,7 @@ export default class AddeColorPickerComponent extends Component {
     super();
 
     // Prevents picker from starting out in an error state due to being empty
+    // TODO: should we still trigger userSelected?
     if (this.get('_isEmpty') && !this.get('canRemoveColor')) {
       this.set('selectedColor', this.get('_defaultColor'));
     }
@@ -202,22 +199,43 @@ export default class AddeColorPickerComponent extends Component {
 
   // ---------- Actions ----------
 
+  // @action
+  // userSelected(selection) {
+  //   console.log(`user selected: ${selection}`);
+  //   this.sendAction('userSelected', '#f00');
+  // }
+
+  @action
+  selectColor(color) {
+    this.set('selectedColor', color);
+    // this.userSelected(color);
+    // console.log(`user selected: ${color}`);
+    this.sendAction('userSelected', '#f00');
+  }
+
   /**
-   * Is this still needed?
+   * Action for custom color input/button.
    */
   @action
-  userSelected(selection) {
-    this.sendAction('userSelected', selection);
+  setCustomColor() {
+    // Set selected color if valid.
+    let color = this.get('_customColor');
+    if (this._validateColor(color)) {
+      this.selectColor(color);
+    }
   }
 
   /**
    * Clear the color.
-   * close - close action from dropdown.
+   * close - close action yielded from dropdown.
    */
   @action
   removeColor(close) {
-    this.set('selectedColor', '');
+    // Set the selected color to empty
+    this.selectColor('');
+    // Clear the custom input
     this.set('_customColor', '');
+    // Close dropdown
     close();
   }
 
@@ -244,8 +262,8 @@ export default class AddeColorPickerComponent extends Component {
    *
    * This is called whenever the color picker trigger is clicked,
    * so it sets up the state before the dropdown is rendered.
-   * TODO: This used to be done when the dropdown was destroyed, but not sure how
-   * to do that with the new adde-dropdown.
+   * TODO Ember 1.13: We can do this better if we can harness the close action
+   * from dropdown instead.
    */
   @action
   cleanDropdownState() {

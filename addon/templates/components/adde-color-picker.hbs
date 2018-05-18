@@ -24,6 +24,7 @@
               {{adde-color-picker-radio-cell
                 color=color
                 selectedColor=selectedColor
+                selectColor="selectColor"
                 data-test-radio-cell=true
               }}
             {{/each}}
@@ -34,6 +35,7 @@
         <button class="button-icon"
           value={{_customColor}}
           disabled={{_isCustomColorInvalid}}
+          {{action "setCustomColor"}}
           data-close
           data-test-custom-color-button>
           {{adde-color-picker-cell
@@ -42,8 +44,8 @@
             data-test-color-cell=true
           }}
         </button>
-        {{!-- TODO: ember 1.13 switch to closure action on enter, remove form.
-          enter=(action "closeDropdown" close)
+        {{!-- TODO: ember 1.13 switch to closure action, remove form.
+          action=(action "setCustomColor" close)
         --}}
         <form {{action "closeDropdown" close on="submit"}} data-test-input-form>
           {{input
@@ -51,6 +53,7 @@
             classNames="adde-text-input"
             class=(if _isCustomColorInvalid 'is-invalid')
             placeholder="HEX code"
+            action="setCustomColor"
             invalid=_isCustomColorInvalid
             data-test-custom-color-input=true
           }}

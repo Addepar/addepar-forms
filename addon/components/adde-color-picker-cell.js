@@ -9,7 +9,7 @@ import { argument } from '@ember-decorators/argument';
 import layout from '../templates/components/adde-color-picker-cell';
 
 @tagName('span')
-@classNames('adde-color-picker-cell')
+@classNames('color-cell')
 export default class ColorPickerCellComponent extends Component {
   layout = layout;
 

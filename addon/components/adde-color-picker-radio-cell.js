@@ -34,6 +34,12 @@ export default class ColorPickerRadioCellComponent extends Component {
   @attribute('data-close') close = true;
 
   /**
+   * Function from color picker component to set the selected color
+   * @type {'function'}
+   */
+  @attribute selectColor = null;
+
+  /**
    * Whether the current radio should be selected
    * @type('boolean')
    */
@@ -44,11 +50,11 @@ export default class ColorPickerRadioCellComponent extends Component {
   }
 
   /**
-   * assuming won't need this once we have our radio button component
+   * Assuming won't need this once we have our radio button component
    */
   @action
   change(event) {
     let color = event.target.value;
-    this.set('selectedColor', color);
+    this.sendAction('selectColor', color);
   }
 }
