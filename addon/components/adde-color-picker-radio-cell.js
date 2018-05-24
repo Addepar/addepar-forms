@@ -53,8 +53,7 @@ export default class ColorPickerRadioCellComponent extends Component {
    * Assuming won't need this once we have our radio button component
    */
   @action
-  change(event) {
-    let color = event.target.value;
-    this.sendAction('selectColor', color);
+  sendChange() {
+    this.sendAction('selectColor', this.get('color'));
   }
 }

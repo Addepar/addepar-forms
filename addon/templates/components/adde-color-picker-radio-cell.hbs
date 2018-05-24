@@ -1,8 +1,9 @@
-<input type="radio"
+{{radio-button
   name="color-picker"
-  value={{color}}
-  checked={{isSelected}}
-  data-close>
+  value=color
+  groupValue=selectedColor
+  changed="sendChange"
+}}
 {{adde-color-picker-cell
   color=color
   data-test-color-cell=true

@@ -30,11 +30,11 @@
     "ember-cli-htmlbars": "^2.0.1",
     "ember-decorators": "^2.1.0",
     "ember-legacy-class-shim": "^1.0.0",
+    "ember-radio-button": "^1.2.3",
     "ember-raf-scheduler": "^0.1.0"
   },
   "devDependencies": {
     "@addepar/eslint-config": "^4.0.0",
-    "@addepar/pop-menu": "^0.3.0",
     "@addepar/prettier-config": "^1.0.0",
     "@addepar/sass-lint-config": "^2.0.1",
     "@addepar/style-toolbox": "^0.5.0",
