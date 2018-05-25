@@ -1,6 +1,6 @@
 import Component from '@ember/component';
 
-import { action, computed } from '@ember-decorators/object';
+import { action } from '@ember-decorators/object';
 
 import { attribute, classNames, tagName } from '@ember-decorators/component';
 
@@ -29,28 +29,35 @@ export default class ColorPickerRadioCellComponent extends Component {
   @argument selectedColor = '';
 
   /**
-   * Choosing a color should close the dropdown
+   * Close dropdown function passed from main color picker component.
+   * @type ('function')
    */
-  @attribute('data-close') close = true;
+  @argument closeDropdown = null;
 
   /**
    * Function from color picker component to set the selected color
    * @type {'function'}
    */
-  @attribute selectColor = null;
+  @argument selectColor = null;
 
   /**
-   * Whether the current radio should be selected
-   * @type('boolean')
+   * Choosing a color should close the dropdown.
+   * This only applies for click.
    */
-  @computed('selectedColor', 'color')
-  @attribute('data-focus')
-  get isSelected() {
-    return this.get('selectedColor') === this.get('color');
+  @attribute('data-close') close = true;
+
+  /**
+   * Capture keyup event so we can close the dropdown on enter.
+   */
+  keyUp(event) {
+    let keyCode = event.key;
+    if (keyCode === 'Enter') {
+      this.closeDropdown();
+    }
   }
 
   /**
-   * Assuming won't need this once we have our radio button component
+   * Send the select color action up to the main color picker component.
    */
   @action
   sendChange() {

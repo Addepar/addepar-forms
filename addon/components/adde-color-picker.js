@@ -51,13 +51,6 @@ export default class AddeColorPickerComponent extends Component {
   @argument disabled = false;
 
   /**
-   * Dropdown class
-   * TODO: When needed, make into an argument and merge this with user optional class?
-   * @type('string')
-   */
-  dropdownClass = 'adde-color-picker-dropdown';
-
-  /**
    * Default color palette
    * Purposefully split the items by row to force
    * the colors to line up how the dev wants -
@@ -74,6 +67,13 @@ export default class AddeColorPickerComponent extends Component {
     A(['#c92f2f', '#e25113', '#e0b140', '#2ea76e', '#0082a7', '#313fc5', '#ac1fee', '#5b738a']),
     A(['#9f1515', '#903300', '#bc8e1e', '#0f7746', '#005168', '#0b1891', '#7d01b7', '#2d4b63']),
   ]);
+
+  /**
+   * Dropdown class
+   * TODO: When needed, make into an argument and merge this with user optional class?
+   * @type('string')
+   */
+  dropdownClass = 'adde-color-picker-dropdown';
 
   // ----- Private Variables -----
 
@@ -109,7 +109,7 @@ export default class AddeColorPickerComponent extends Component {
   }
   set _customColor(color) {
     // Auto format the custom input with hex
-    return this._formatColor(color);
+    return this._formatHexHash(color);
   }
 
   /**
@@ -162,7 +162,8 @@ export default class AddeColorPickerComponent extends Component {
     ) {
       return true;
     } else {
-      return /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color);
+      let noHash = color.split('#').pop();
+      return /(^[0-9A-F]{6}$)|(^[0-9A-F]{3}$)/i.test(noHash);
     }
   }
 
@@ -170,7 +171,7 @@ export default class AddeColorPickerComponent extends Component {
    * Formats the inputted color to always have a hash so its a legal hex color.
    * Ignores if transparent or empty.
    */
-  _formatColor(color) {
+  _formatHexHash(color) {
     // We don't want to format anything if the user is
     // intentionally clearing the color or using transparent
     if (color === '' || color === 'transparent') {
@@ -178,12 +179,38 @@ export default class AddeColorPickerComponent extends Component {
     }
     // Add hash if not there while base color is valid
     let formattedColor = color.trim();
-    if (
-      /(^[0-9A-F]{6}$)|(^[0-9A-F]{3}$)/i.test(formattedColor) &&
-      formattedColor.charAt(0) !== '#'
-    ) {
+    if (this._validateColor(formattedColor) && formattedColor.charAt(0) !== '#') {
       formattedColor = `#${formattedColor}`;
     }
+    return formattedColor;
+  }
+
+  /**
+   * Formats the inputted color to always have 6 digits, assuming it was a valid
+   * 3 digit hex in the first place.
+   * Ignores if transparent or empty.
+   */
+  _formatHexLength(color) {
+    // We don't want to format anything if the user is
+    // intentionally clearing the color or using transparent
+    if (color === '' || color === 'transparent') {
+      return color;
+    }
+    // Remove hash if present
+    let formattedColor = color.split('#').pop();
+
+    // If valid 3 digits, double it
+    if (/(^[0-9A-F]{3}$)/i.test(formattedColor)) {
+      formattedColor = formattedColor
+        .split('')
+        .map(function(channel) {
+          return channel + channel;
+        })
+        .join('');
+    }
+    // Add hash back
+    formattedColor = `#${formattedColor}`;
+
     return formattedColor;
   }
 
@@ -199,18 +226,14 @@ export default class AddeColorPickerComponent extends Component {
 
   // ---------- Actions ----------
 
-  // @action
-  // userSelected(selection) {
-  //   console.log(`user selected: ${selection}`);
-  //   this.sendAction('userSelected', '#f00');
-  // }
-
+  /**
+   * Sets color picker selected color,
+   * also sends userSelected action to external component if needed.
+   */
   @action
   selectColor(color) {
-    this.set('selectedColor', color);
-    // this.userSelected(color);
-    // console.log(`user selected: ${color}`);
-    this.sendAction('userSelected', '#f00');
+    this.set('selectedColor', this._formatHexLength(color));
+    this.sendAction('userSelected', this._formatHexLength(color));
   }
 
   /**

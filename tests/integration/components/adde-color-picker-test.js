@@ -264,7 +264,7 @@ test('Color picker dropdown opens and closes appropriately', async function(asse
 });
 
 test('Color picker validation works', async function(assert) {
-  assert.expect(10);
+  assert.expect(11);
 
   this.render(hbs`
     {{adde-color-picker
@@ -339,5 +339,14 @@ test('Color picker validation works', async function(assert) {
     colorPicker.dropdown.content.customColorInput.value,
     '#f00',
     'Input automatically adds a hash if none is provided'
+  );
+
+  await colorPicker.dropdown.content.customColorButton.click();
+  await colorPicker.dropdown.open();
+
+  assert.equal(
+    colorPicker.dropdown.content.customColorInput.value,
+    '#ff0000',
+    'Picker converts 3 digit hex to 6 digits on selection'
   );
 });
