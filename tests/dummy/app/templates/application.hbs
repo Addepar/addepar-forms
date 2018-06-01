@@ -1,3 +1,32 @@
-<h2 id="title">Welcome to Ember</h2>
+<h1 id="title">Forms playground</h1>
+
+
+<h2>Color Picker</h2>
+<h3>No transparent, no remove color</h3>
+{{adde-color-picker}}
+
+<h3>Tests alternate placement (right-start)</h3>
+{{adde-color-picker placement="right-start"}}
+
+<h3>Transparency enabled</h3>
+<p>A transparent cell should show up as an option in the grid</p>
+{{adde-color-picker isTransparencyEnabled=true}}
+
+<h3>Remove color allowed</h3>
+<p>Should have initial no color state inside button, delete shows up</p>
+{{adde-color-picker canRemoveColor=true}}
+
+<h3>Disabled</h3>
+<p>Button should have disabled state, can't open dropdown</p>
+{{adde-color-picker disabled=true}}
+
+<h3>Test - force transparent, not allowed</h3>
+<p>Button should have error state</p>
+{{adde-color-picker selectedColor="transparent"}}
+
+<h3>Test - force blank, not allowed</h3>
+<p>Should default to black</p>
+{{adde-color-picker selectedColor=""}}
 
 {{outlet}}
+

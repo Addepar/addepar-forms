@@ -1,0 +1,11 @@
+{{radio-button-input
+  name="color-picker"
+  value=color
+  groupValue=selectedColor
+  changed="sendChange"
+}}
+{{adde-color-picker-cell
+  color=color
+  data-test-color-cell=true
+}}
+{{yield}}

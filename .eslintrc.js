@@ -1,3 +1,4 @@
 module.exports = {
-  extends: '@addepar'
+  extends: '@addepar',
+  parser: 'babel-eslint',
 };
