@@ -61,9 +61,9 @@
   version "2.0.1"
   resolved "https://addepar.jfrog.io/addepar/api/npm/npm/@addepar/sass-lint-config/-/sass-lint-config-2.0.1.tgz?dl=https://registry.yarnpkg.com/@addepar/sass-lint-config/-/sass-lint-config-2.0.1.tgz#b9782ffd6b9c5d267cbc54acb32e5254ca789a12"
 
-"@addepar/style-toolbox@^0.5.0":
-  version "0.5.0"
-  resolved "https://addepar.jfrog.io/addepar/api/npm/npm/@addepar/style-toolbox/-/style-toolbox-0.5.0.tgz?dl=https://registry.yarnpkg.com/@addepar/style-toolbox/-/style-toolbox-0.5.0.tgz#c562c4cb6bb1b65cf777d990b167c77a629d4678"
+"@addepar/style-toolbox@^0.5.1":
+  version "0.5.1"
+  resolved "https://addepar.jfrog.io/addepar/api/npm/npm/@addepar/style-toolbox/-/style-toolbox-0.5.1.tgz?dl=https://registry.yarnpkg.com/@addepar/style-toolbox/-/style-toolbox-0.5.1.tgz#6b0b576661b5aef6d81355b5d6b5270749e8399b"
   dependencies:
     broccoli-file-creator "^1.1.1"
     broccoli-funnel "^2.0.1"
