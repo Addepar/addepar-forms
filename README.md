@@ -1,8 +1,12 @@
-# ice-forms
+# addepar-forms
 
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
+
+```
+ember install @addepar/forms
+```
 
 * `git clone <repository-url>` this repository
 * `cd addepar-forms`
