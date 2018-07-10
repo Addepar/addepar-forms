@@ -79,9 +79,9 @@ test('Color picker correctly reflects selected color', async function(assert) {
     'Color is reflected in custom input'
   );
 
-  let newCellColor = colorPicker.dropdown.content.cells.eq(5).color;
+  let newCellColor = colorPicker.dropdown.content.cells.objectAt(5).color;
 
-  await colorPicker.dropdown.content.cells.eq(5).click();
+  await colorPicker.dropdown.content.cells.objectAt(5).click();
 
   assert.ok(
     colorPicker.target.cell.isColor(newCellColor),
@@ -205,9 +205,9 @@ test('Color picker empty color mode works correctly', async function(assert) {
     'Custom color input is valid when color is blank in empty mode'
   );
 
-  let newCellColor = colorPicker.dropdown.content.cells.eq(5).color;
+  let newCellColor = colorPicker.dropdown.content.cells.objectAt(5).color;
 
-  await colorPicker.dropdown.content.cells.eq(5).click();
+  await colorPicker.dropdown.content.cells.objectAt(5).click();
 
   assert.ok(
     colorPicker.target.cell.isColor(newCellColor),
@@ -242,7 +242,7 @@ test('Color picker dropdown opens and closes appropriately', async function(asse
     'Color picker dropdown opened on color picker button click'
   );
 
-  await colorPicker.dropdown.content.cells.eq(5).click();
+  await colorPicker.dropdown.content.cells.objectAt(5).click();
 
   assert.ok(!colorPicker.dropdown.isOpen, 'Color picker dropdown closed on grid color selection');
 

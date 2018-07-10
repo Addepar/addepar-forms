@@ -14,12 +14,12 @@ import AddeDropdownPage from '@addepar/pop-menu/test-support/pages/adde-dropdown
 export default PageObject.extend({
   target: {
     scope: '[data-popover-trigger]',
-    cell: AddeColorPickerCellPage.scope('[data-test-color-cell]'),
+    cell: AddeColorPickerCellPage.extend('[data-test-color-cell]'),
   },
   dropdown: AddeDropdownPage.extend({
     scope: '[data-test-color-picker-dropdown]',
     content: {
-      cells: collection(AddeColorPickerRadioCellPage.scope('[data-test-radio-cell]')),
+      cells: collection(AddeColorPickerRadioCellPage.extend('[data-test-radio-cell]')),
       activeRadioValue: value('input:checked'),
       transparentOption: {
         scope: '[data-test-color-cell].is-transparent',

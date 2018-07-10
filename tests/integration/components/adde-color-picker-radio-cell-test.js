@@ -48,16 +48,19 @@ test('Cells correctly reflect current active color', async function(assert) {
   });
 
   assert.ok(
-    page.cells.eq(1).radioChecked,
+    page.cells.objectAt(1).radioChecked,
     'Radio with current selected color should be initially checked.'
   );
-  assert.ok(!page.cells.eq(0).radioChecked, 'Other radio without current color is not checked.');
-
-  await page.cells.eq(0).click();
-
-  assert.ok(page.cells.eq(0).radioChecked, 'Selected radio should be checked.');
   assert.ok(
-    !page.cells.eq(1).radioChecked,
+    !page.cells.objectAt(0).radioChecked,
+    'Other radio without current color is not checked.'
+  );
+
+  await page.cells.objectAt(0).click();
+
+  assert.ok(page.cells.objectAt(0).radioChecked, 'Selected radio should be checked.');
+  assert.ok(
+    !page.cells.objectAt(1).radioChecked,
     'Previously selected radio should no longer be checked'
   );
 });
