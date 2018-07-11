@@ -3,7 +3,7 @@ import hbs from 'htmlbars-inline-precompile';
 
 import AddeColorPickerPage from '@addepar/forms/test-support/pages/adde-color-picker';
 
-const ColorPickerHelper = AddeColorPickerPage.scope('[data-test-color-picker]');
+const ColorPickerHelper = AddeColorPickerPage.extend('[data-test-color-picker]');
 
 moduleForComponent('adde-color-picker', 'Integration | Component | adde color picker', {
   integration: true,
@@ -17,7 +17,7 @@ test('Color picker defaults are correct', async function(assert) {
       data-test-color-picker=true}}
   `);
 
-  let colorPicker = ColorPickerHelper.create();
+  let colorPicker = new ColorPickerHelper();
 
   assert.ok(
     colorPicker.target.cell.isColor('#000000'),
@@ -46,7 +46,7 @@ test('Color picker correctly reflects selected color', async function(assert) {
       data-test-color-picker=true}}
   `);
 
-  let colorPicker = ColorPickerHelper.create();
+  let colorPicker = new ColorPickerHelper();
 
   assert.ok(
     colorPicker.target.cell.isColor(color),
@@ -79,9 +79,9 @@ test('Color picker correctly reflects selected color', async function(assert) {
     'Color is reflected in custom input'
   );
 
-  let newCellColor = colorPicker.dropdown.content.cells.eq(5).color;
+  let newCellColor = colorPicker.dropdown.content.cells.objectAt(5).color;
 
-  await colorPicker.dropdown.content.cells.eq(5).click();
+  await colorPicker.dropdown.content.cells.objectAt(5).click();
 
   assert.ok(
     colorPicker.target.cell.isColor(newCellColor),
@@ -123,7 +123,7 @@ test('Color picker transparent mode works correctly', async function(assert) {
       data-test-color-picker=true}}
   `);
 
-  let colorPicker = ColorPickerHelper.create();
+  let colorPicker = new ColorPickerHelper();
 
   await colorPicker.dropdown.open();
 
@@ -173,7 +173,7 @@ test('Color picker empty color mode works correctly', async function(assert) {
       data-test-color-picker=true}}
   `);
 
-  let colorPicker = ColorPickerHelper.create();
+  let colorPicker = new ColorPickerHelper();
 
   assert.ok(
     colorPicker.target.contains('+ Color'),
@@ -205,9 +205,9 @@ test('Color picker empty color mode works correctly', async function(assert) {
     'Custom color input is valid when color is blank in empty mode'
   );
 
-  let newCellColor = colorPicker.dropdown.content.cells.eq(5).color;
+  let newCellColor = colorPicker.dropdown.content.cells.objectAt(5).color;
 
-  await colorPicker.dropdown.content.cells.eq(5).click();
+  await colorPicker.dropdown.content.cells.objectAt(5).click();
 
   assert.ok(
     colorPicker.target.cell.isColor(newCellColor),
@@ -233,7 +233,7 @@ test('Color picker dropdown opens and closes appropriately', async function(asse
       data-test-color-picker=true}}
   `);
 
-  let colorPicker = ColorPickerHelper.create();
+  let colorPicker = new ColorPickerHelper();
 
   await colorPicker.dropdown.open();
 
@@ -242,7 +242,7 @@ test('Color picker dropdown opens and closes appropriately', async function(asse
     'Color picker dropdown opened on color picker button click'
   );
 
-  await colorPicker.dropdown.content.cells.eq(5).click();
+  await colorPicker.dropdown.content.cells.objectAt(5).click();
 
   assert.ok(!colorPicker.dropdown.isOpen, 'Color picker dropdown closed on grid color selection');
 
@@ -272,7 +272,7 @@ test('Color picker validation works', async function(assert) {
       data-test-color-picker=true}}
   `);
 
-  let colorPicker = ColorPickerHelper.create();
+  let colorPicker = new ColorPickerHelper();
 
   await colorPicker.dropdown.open();
 

@@ -5,6 +5,6 @@ import AddeColorPickerCellPage from '@addepar/forms/test-support/pages/adde-colo
 export default PageObject.extend({
   click: clickable(),
   radioChecked: property('checked', 'input[type="radio"]'),
-  cell: AddeColorPickerCellPage.scope('[data-test-color-cell]'),
+  cell: AddeColorPickerCellPage.extend('[data-test-color-cell]'),
   color: value('input[type="radio"]'),
 });
