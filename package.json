@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "@addepar/ember-toolbox": "^0.3.3",
-    "@addepar/pop-menu": "^0.4.0",
+    "@addepar/pop-menu":
+      "https://github.com/Addepar/addepar-pop-menu.git#66a7bc20b21c0b7c0cb0eb3787a361fe864876a0",
     "@ember-decorators/argument": "^0.8.10",
     "@ember-decorators/babel-transforms": "^2.0.1",
     "ember-classy-page-object": "^0.5.0",
