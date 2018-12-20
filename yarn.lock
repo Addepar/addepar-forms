@@ -31,9 +31,9 @@
     eslint-plugin-prefer-let "^1.0.1"
     eslint-plugin-prettier "^2.6.0"
 
-"@addepar/pop-menu@^0.4.0":
+"@addepar/pop-menu@https://github.com/Addepar/addepar-pop-menu.git#66a7bc20b21c0b7c0cb0eb3787a361fe864876a0":
   version "0.4.0"
-  resolved "https://addepar.jfrog.io/addepar/api/npm/npm/@addepar/pop-menu/-/pop-menu-0.4.0.tgz#f8120260c46f04731879dfa80720adce760cba2f"
+  resolved "https://github.com/Addepar/addepar-pop-menu.git#66a7bc20b21c0b7c0cb0eb3787a361fe864876a0"
   dependencies:
     "@addepar/ember-toolbox" "^0.3.3"
     "@ember-decorators/argument" "^0.8.10"
